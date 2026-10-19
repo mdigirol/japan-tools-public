@@ -19,7 +19,7 @@ const networkFirst = (name: string, pattern: RegExp, maxAgeDays: number) => ({
 });
 
 export default defineConfig({
-  base: '/japan-tools-public/',
+  base: '/japan-trip-tools-public/',
   define: {
     __APP_VERSION__: JSON.stringify(pkg.version),
     __BUILT_AT__: JSON.stringify(builtAt)
@@ -34,8 +34,8 @@ export default defineConfig({
         name: 'Japan Trip Companion',
         short_name: 'Japan',
         description: 'What to say, do, or pay, right now. Works offline.',
-        start_url: '/japan-tools-public/',
-        scope: '/japan-tools-public/',
+        start_url: '/japan-trip-tools-public/',
+        scope: '/japan-trip-tools-public/',
         display: 'standalone',
         background_color: '#faf7f2',
         theme_color: '#b7282e',
@@ -47,7 +47,7 @@ export default defineConfig({
       },
       workbox: {
         globPatterns: ['**/*.{js,css,html,json,png,svg,webmanifest,mp3}'],
-        navigateFallback: '/japan-tools-public/index.html',
+        navigateFallback: '/japan-trip-tools-public/index.html',
         cleanupOutdatedCaches: true,
         runtimeCaching: [
           networkFirst('rates', /^https:\/\/(api\.frankfurter\.(app|dev)|open\.er-api\.com)\//, 30),

@@ -8,7 +8,7 @@ This is a public copy for testing. The itinerary in `src/data/trip.json` is a **
 
 ```bash
 npm install
-npm run dev          # http://localhost:5173/japan-tools-public/
+npm run dev          # http://localhost:5173/japan-trip-tools-public/
 ```
 
 The app follows the trip's dates, so add `?now=` to any URL to pick a moment:

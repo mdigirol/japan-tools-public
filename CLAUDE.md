@@ -32,7 +32,7 @@ Phone-first offline web app for a Japan trip. Public demo: `src/data/trip.json` 
 
 ## Commands
 
-- `npm run dev` — dev server at http://localhost:5173/japan-tools-public/
+- `npm run dev` — dev server at http://localhost:5173/japan-trip-tools-public/
 - `npm test` — Vitest (logic, content schemas, trip.json confidentiality)
 - `npm run test:e2e` — Playwright against the production build (offline, `?now=` scenarios, cards, claim log)
 - `npm run build` — typecheck and build to `dist/`

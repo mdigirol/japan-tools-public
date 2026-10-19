@@ -25,7 +25,7 @@ for (const day of trip.days) {
   const q = `[out:json][timeout:60];(${pts.map((p) => `nwr["shop"="convenience"](around:${RADIUS},${p.lat},${p.lng});`).join('')});out center tags;`;
   let list: Konbini[] = [];
   for (let attempt = 0; attempt < 3; attempt++) {
-    try { list = await overpass(q, 60_000, { 'User-Agent': 'japan-tools-public/0.1 (app build script)' }); break; }
+    try { list = await overpass(q, 60_000, { 'User-Agent': 'japan-trip-tools-public/0.1 (app build script)' }); break; }
     catch (e) { console.warn(`${day.date}: ${(e as Error).message}, retrying`); await sleep(10_000 * (attempt + 1)); }
   }
   const seen = new Set<string>();
