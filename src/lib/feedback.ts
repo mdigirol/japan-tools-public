@@ -5,6 +5,7 @@
 // With VITE_FEEDBACK_URL set, notes go to the relay (worker/feedback), which files the issue: type, tap Send, done.
 // Without it, the form falls back to a prefilled GitHub "new issue" link.
 import { FEEDBACK_REPO, feedbackBody, feedbackTitle, isKind, issueLabels, type FeedbackContext, type FeedbackKind } from './feedbackIssue';
+import { FEEDBACK_DRAFT_KEY as DRAFT_KEY, FEEDBACK_OUTBOX_KEY as OUTBOX_KEY } from './storageNames';
 
 export const FEEDBACK_URL: string = import.meta.env.VITE_FEEDBACK_URL ?? '';
 export const TURNSTILE_SITE_KEY: string = import.meta.env.VITE_TURNSTILE_SITE_KEY ?? '';
@@ -39,8 +40,6 @@ export async function sendFeedback(note: Note, ctx: FeedbackContext, turnstile: 
 }
 
 // The unsent note and any notes waiting for a connection survive a reload. localStorage, try/catch as everywhere else.
-const DRAFT_KEY = 'jtc-feedback-draft-v1';
-const OUTBOX_KEY = 'jtc-feedback-outbox-v1';
 const valid = (d: unknown): d is Note => !!d && isKind((d as Note).kind) && typeof (d as Note).message === 'string';
 
 export function loadDraft(): Note {

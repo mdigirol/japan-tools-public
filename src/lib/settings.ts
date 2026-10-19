@@ -1,6 +1,7 @@
 // Small per-device settings in localStorage (try/catch everywhere). Includes the sync token (§8),
 // which never leaves this device except in requests to the GitHub API.
 import { useEffect, useState } from 'preact/hooks';
+import { SETTINGS_KEY as KEY } from './storageNames';
 
 export interface Settings {
   who: string;
@@ -13,7 +14,6 @@ export interface Settings {
   favorites: string[];             // phrase ids, local only
 }
 
-const KEY = 'jtc-settings-v1';
 const DEFAULTS: Settings = {
   who: '', tempFirst: 'F', textSize: 'normal', recipients: [], bags: ['Carry-on', 'Big suitcase', 'Backpack'],
   syncToken: '', rateOverride: null, favorites: []
