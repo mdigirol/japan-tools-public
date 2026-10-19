@@ -1,6 +1,7 @@
 // IndexedDB: purchases, photos, the sync queue, and cached API results.
 import { openDB, type DBSchema, type IDBPDatabase } from 'idb';
 import type { Purchase } from '../data/schema';
+import { DB_NAME } from './storageNames';
 
 export interface QueueEntry { id?: number; purchaseId: string; at: string }
 export interface CacheEntry<T = unknown> { key: string; at: number; value: T }
@@ -16,7 +17,7 @@ let dbp: Promise<IDBPDatabase<CompanionDB>> | null = null;
 
 export function db() {
   if (!dbp) {
-    dbp = openDB<CompanionDB>('companion', 1, {
+    dbp = openDB<CompanionDB>(DB_NAME, 1, {
       upgrade(d) {
         d.createObjectStore('purchases', { keyPath: 'id' });
         d.createObjectStore('photos', { keyPath: 'id' });

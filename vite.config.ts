@@ -3,6 +3,7 @@ import preact from '@preact/preset-vite';
 import { VitePWA } from 'vite-plugin-pwa';
 import { readFileSync } from 'node:fs';
 import { basePath, dataPlugin } from './scripts/build-env';
+import { runtimeCacheName } from './src/lib/storageNames';
 
 const pkg = JSON.parse(readFileSync(new URL('./package.json', import.meta.url), 'utf8'));
 const builtAt = new Date().toISOString();
@@ -15,7 +16,7 @@ const networkFirst = (name: string, pattern: RegExp, maxAgeDays: number) => ({
   urlPattern: pattern,
   handler: 'NetworkFirst' as const,
   options: {
-    cacheName: name,
+    cacheName: runtimeCacheName(name),
     networkTimeoutSeconds: 6,
     expiration: { maxEntries: 60, maxAgeSeconds: maxAgeDays * 86400 },
     cacheableResponse: { statuses: [0, 200] }
