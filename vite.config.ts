@@ -37,8 +37,8 @@ export default defineConfig({
       injectRegister: false,
       includeAssets: ['icons/*.png', 'icons/*.svg'],
       manifest: {
-        name: 'Japan Trip Companion',
-        short_name: 'Japan',
+        name: 'Japan Trip Companion BETA',
+        short_name: 'Japan BETA',
         description: 'What to say, do, or pay, right now. Works offline.',
         start_url: base,
         scope: base,
