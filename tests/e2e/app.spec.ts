@@ -131,3 +131,19 @@ test('numbers reads prices aloud in romaji', async ({ page }) => {
   await page.goto(at('2026-11-21T08:00+09:00', '#/numbers'));
   await expect(page.getByTestId('yen-romaji')).toHaveText('sanzen yonhyaku hachijuu en');
 });
+
+// Public repo only (see CLAUDE.md, "Public-only features"). Do not copy into japan-trip-tools.
+test('feedback on More opens a prefilled GitHub issue', async ({ page }) => {
+  await page.goto(at('2026-11-21T08:00+09:00', '#/more'));
+  const form = page.getByTestId('feedback');
+  await expect(form.getByRole('button', { name: 'Open on GitHub' })).toBeDisabled();
+  await form.getByRole('button', { name: 'Idea' }).click();
+  await form.getByRole('textbox').fill('Add a packing list');
+  const link = form.getByRole('link', { name: 'Open on GitHub' });
+  const u = new URL((await link.getAttribute('href'))!);
+  expect(u.pathname).toBe('/mdigirol/japan-trip-tools-public/issues/new');
+  expect(u.searchParams.get('title')).toBe('Feedback: Add a packing list');
+  expect(u.searchParams.get('labels')).toBe('feedback,enhancement');
+  await page.reload();                                   // the unsent note survives a reload
+  await expect(page.getByTestId('feedback').getByRole('textbox')).toHaveValue('Add a packing list');
+});

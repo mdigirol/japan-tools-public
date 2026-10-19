@@ -1,5 +1,6 @@
 import { MODULES } from '../lib/modules';
 import { href } from '../lib/router';
+import { Feedback } from '../components/Feedback';   // public repo only; not in japan-trip-tools
 
 export function More() {
   return (
@@ -13,6 +14,7 @@ export function More() {
         </a>
       ))}
       {MODULES.some((m) => !m.ready) && <p class="small faint" style="margin-top:12px">Coming before the trip: {MODULES.filter((m) => !m.ready).map((m) => m.label).join(', ')}.</p>}
+      <Feedback />
     </div>
   );
 }

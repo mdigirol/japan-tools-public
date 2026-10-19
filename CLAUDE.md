@@ -10,6 +10,12 @@ Phone-first offline web app for a Japan trip. Public demo: `data/sample/trip.jso
 - `data/sample/trip.json` is sample data. `tests/unit/trip.test.ts` fails the build on anything outside the schema or anything that looks like a booking number, price, token or clock time. Don't loosen it; fix the data.
 - Real itineraries go in `data/local/` (see Data below). It is gitignored here, and `tests/unit/data-local.test.ts` fails if any of it is tracked.
 
+## Public-only features (never port to `japan-trip-tools`)
+
+Changes here are often copied into the private `japan-trip-tools`. These belong to this repo only; leave them out of any port:
+
+- **Feedback form** (bottom of More): `src/lib/feedback.ts`, `src/components/Feedback.tsx`, `tests/unit/feedback.test.ts`, and the `<Feedback />` line in `src/routes/More.tsx`. It opens a prefilled public issue on `mdigirol/japan-trip-tools-public`, so in the private app it would publish real trip details. Guards: the form renders only when the base path is `/japan-trip-tools-public/`, and `tests/unit/feedback.test.ts` fails in a repo with any other package name.
+
 ## Content
 
 - American English in UI copy, comments and docs.

@@ -54,6 +54,10 @@ Sync is off unless you build with `VITE_DATA_REPO=owner/repo`. It stores purchas
 
 Photos never sync.
 
+## Feedback
+
+The bottom of **More** has a feedback form. It opens a prefilled issue on this repo (GitHub account needed; tap Submit there). No token is involved. The form is specific to this public demo and isn't part of the private app.
+
 ## Develop
 
 ```bash
