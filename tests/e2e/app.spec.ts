@@ -133,17 +133,33 @@ test('numbers reads prices aloud in romaji', async ({ page }) => {
 });
 
 // Public repo only (see CLAUDE.md, "Public-only features"). Do not copy into japan-trip-tools.
-test('feedback on More opens a prefilled GitHub issue', async ({ page }) => {
+// The e2e build points the form at https://feedback.test/ (playwright.config.ts); this routes it.
+test('feedback on More sends a note, and holds one written offline', async ({ page, context }) => {
+  const sent: Record<string, unknown>[] = [];
+  await page.route(/feedback\.test/, async (r) => {
+    sent.push(JSON.parse(r.request().postData()!));
+    await r.fulfill({ status: 201, headers: { 'Access-Control-Allow-Origin': '*' }, contentType: 'application/json', body: '{"ok":true,"number":7}' });
+  });
   await page.goto(at('2026-11-21T08:00+09:00', '#/more'));
+  await page.evaluate(async () => { await navigator.serviceWorker.ready; });
+  await page.reload();                                   // controlled by the service worker, so an offline reload works
+  await expect.poll(() => page.evaluate(() => !!navigator.serviceWorker.controller)).toBe(true);
   const form = page.getByTestId('feedback');
-  await expect(form.getByRole('button', { name: 'Open on GitHub' })).toBeDisabled();
+  await expect(form.getByRole('button', { name: 'Send' })).toBeDisabled();
   await form.getByRole('button', { name: 'Idea' }).click();
   await form.getByRole('textbox').fill('Add a packing list');
-  const link = form.getByRole('link', { name: 'Open on GitHub' });
-  const u = new URL((await link.getAttribute('href'))!);
-  expect(u.pathname).toBe('/mdigirol/japan-trip-tools-public/issues/new');
-  expect(u.searchParams.get('title')).toBe('Feedback: Add a packing list');
-  expect(u.searchParams.get('labels')).toBe('feedback,enhancement');
-  await page.reload();                                   // the unsent note survives a reload
-  await expect(page.getByTestId('feedback').getByRole('textbox')).toHaveValue('Add a packing list');
+  await form.getByRole('button', { name: 'Send' }).click();
+  await expect(form.getByRole('status')).toHaveText('Sent ✓ Thanks!');
+  expect(sent[0]).toMatchObject({ kind: 'idea', message: 'Add a packing list', website: '' });
+  await expect(form.getByRole('textbox')).toHaveValue('');
+
+  await context.setOffline(true);
+  await form.getByRole('textbox').fill('Written on the train');
+  await form.getByRole('button', { name: 'Send' }).click();
+  await expect(form.getByRole('status')).toContainText('1 note waiting to send');
+  await page.reload();                                   // it survives a reload
+  await expect(page.getByTestId('feedback').getByRole('status')).toContainText('1 note waiting to send');
+  await context.setOffline(false);
+  await expect(page.getByTestId('feedback').getByRole('status')).toHaveText('Sent ✓ Thanks!');
+  expect(sent.map((n) => n.message)).toEqual(['Add a packing list', 'Written on the train']);
 });

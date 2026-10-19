@@ -10,7 +10,8 @@ export default defineConfig({
   use: { baseURL: `http://localhost:4173${basePath()}`, ...devices['iPhone 13'], browserName: 'chromium', serviceWorkers: 'allow' },
   webServer: {
     command: 'npx vite build --outDir dist-e2e && npx vite preview --outDir dist-e2e --port 4173 --strictPort',
-    env: { TRIP_DATA: 'sample' },
+    // A fake feedback relay (routed in the test) and no Turnstile, whatever a local .env says.
+    env: { TRIP_DATA: 'sample', VITE_FEEDBACK_URL: 'https://feedback.test/', VITE_TURNSTILE_SITE_KEY: '' },
     port: 4173,
     reuseExistingServer: !process.env.CI,
     timeout: 120_000

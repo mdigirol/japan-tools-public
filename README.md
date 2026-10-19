@@ -56,7 +56,9 @@ Photos never sync.
 
 ## Feedback
 
-The bottom of **More** has a feedback form. It opens a prefilled issue on this repo (GitHub account needed; tap Submit there). No token is involved. The form is specific to this public demo and isn't part of the private app.
+The bottom of **More** has a feedback form: pick Bug, Idea or Wrong info, type a note, tap **Send**. A small Cloudflare Worker files it as an issue on this repo, so testers never need GitHub. Notes written offline wait on the phone and send once it's back online with More open. Setup is in [`worker/feedback/README.md`](worker/feedback/README.md). Until the relay is set up, the form opens a prefilled GitHub issue instead.
+
+The form is specific to this public demo and isn't part of the private app.
 
 ## Develop
 

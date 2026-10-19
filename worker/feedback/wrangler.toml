@@ -1,0 +1,19 @@
+# PUBLIC REPO ONLY. Do not copy into japan-trip-tools (see "Public-only features" in CLAUDE.md).
+# Feedback relay. Setup and secrets: README.md in this folder.
+name = "jtc-feedback"
+main = "src/index.ts"
+compatibility_date = "2026-09-01"
+workers_dev = true
+
+[vars]
+GITHUB_REPO = "mdigirol/japan-trip-tools-public"
+ALLOWED_ORIGINS = "https://mdigirol.github.io"
+
+# 3 notes a minute per IP address, per Cloudflare location.
+[[ratelimits]]
+name = "FEEDBACK_LIMITER"
+namespace_id = "1001"
+
+  [ratelimits.simple]
+  limit = 3
+  period = 60

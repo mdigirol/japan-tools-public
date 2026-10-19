@@ -1,58 +1,59 @@
-// PUBLIC REPO ONLY. Do not copy this file (or src/components/Feedback.tsx, or tests/unit/feedback.test.ts)
+// PUBLIC REPO ONLY. Do not copy this file (or src/components/Feedback.tsx, src/lib/feedbackIssue.ts, worker/feedback/)
 // into japan-trip-tools. Feedback becomes a public issue on japan-trip-tools-public; in the private app it
 // would publish real trip details. See "Public-only features" in CLAUDE.md.
 //
-// No token or backend: the form builds a prefilled GitHub "new issue" link, and the person taps Submit there.
-export const FEEDBACK_REPO = 'mdigirol/japan-trip-tools-public';
-export const FEEDBACK_MAX = 1500;   // keeps the issue link well under URL length limits
+// With VITE_FEEDBACK_URL set, notes go to the relay (worker/feedback), which files the issue: type, tap Send, done.
+// Without it, the form falls back to a prefilled GitHub "new issue" link.
+import { FEEDBACK_REPO, feedbackBody, feedbackTitle, isKind, issueLabels, type FeedbackContext, type FeedbackKind } from './feedbackIssue';
+
+export const FEEDBACK_URL: string = import.meta.env.VITE_FEEDBACK_URL ?? '';
+export const TURNSTILE_SITE_KEY: string = import.meta.env.VITE_TURNSTILE_SITE_KEY ?? '';
 
 // Second guard if the code gets copied anyway: the form only shows in a build served from this repo's path.
 export const feedbackEnabled = (base: string = import.meta.env.BASE_URL): boolean => base === '/japan-trip-tools-public/';
 
-export type FeedbackKind = 'bug' | 'idea' | 'content';
-export const KINDS: { id: FeedbackKind; label: string; issueLabel: string }[] = [
-  { id: 'bug', label: 'Bug', issueLabel: 'bug' },
-  { id: 'idea', label: 'Idea', issueLabel: 'enhancement' },
-  { id: 'content', label: 'Wrong info', issueLabel: 'content' }
-];
-
-export interface FeedbackContext { version: string; builtAt: string; screen: string; standalone: boolean }
-
-export function feedbackTitle(message: string): string {
-  const first = message.trim().split('\n')[0].trim().replace(/\s+/g, ' ');
-  return `Feedback: ${first.length > 60 ? `${first.slice(0, 59)}…` : first}`;
-}
-
-export function feedbackBody(kind: FeedbackKind, message: string, ctx: FeedbackContext): string {
-  const k = KINDS.find((x) => x.id === kind)!;
-  return [
-    message.trim().slice(0, FEEDBACK_MAX),
-    '',
-    '---',
-    `Kind: ${k.label}`,
-    `App: ${ctx.version} · built ${ctx.builtAt}`,
-    `Screen: ${ctx.screen}${ctx.standalone ? ' · home screen app' : ''}`,
-    '',
-    '_Sent from the in-app feedback form._'
-  ].join('\n');
-}
+export interface Note { kind: FeedbackKind; message: string }
 
 // Labels only stick when the submitter can triage the repo; GitHub ignores them otherwise.
 export function feedbackUrl(kind: FeedbackKind, message: string, ctx: FeedbackContext, repo: string = FEEDBACK_REPO): string {
-  const k = KINDS.find((x) => x.id === kind)!;
-  const q = new URLSearchParams({ title: feedbackTitle(message), body: feedbackBody(kind, message, ctx), labels: `feedback,${k.issueLabel}` });
+  const q = new URLSearchParams({ title: feedbackTitle(message), body: feedbackBody(kind, message, ctx), labels: issueLabels(kind).join(',') });
   return `https://github.com/${repo}/issues/new?${q.toString()}`;
 }
 
-// The unsent note survives a reload or going offline. localStorage, try/catch as everywhere else.
-const DRAFT_KEY = 'jtc-feedback-draft-v1';
-export function loadDraft(): { kind: FeedbackKind; message: string } {
+export type SendResult = { ok: true } | { ok: false; error: string };
+
+// text/plain keeps it a "simple" request: no CORS preflight round trip on a slow phone connection.
+// `website` is the form's hidden spam trap: people leave it empty, and the relay drops notes that fill it in.
+export async function sendFeedback(note: Note, ctx: FeedbackContext, turnstile: string,
+  { url = FEEDBACK_URL, fetcher = fetch, website = '' }: { url?: string; fetcher?: typeof fetch; website?: string } = {}): Promise<SendResult> {
+  let r: Response;
   try {
-    const d = JSON.parse(localStorage.getItem(DRAFT_KEY) || 'null');
-    if (d && KINDS.some((k) => k.id === d.kind) && typeof d.message === 'string') return d;
-  } catch { /* storage blocked */ }
+    r = await fetcher(url, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=UTF-8' }, body: JSON.stringify({ ...note, ...ctx, turnstile, website }) });
+  } catch {
+    return { ok: false, error: 'Couldn’t reach the server. Check the connection and try again.' };
+  }
+  if (r.ok) return { ok: true };
+  if (r.status === 429) return { ok: false, error: 'Too many notes in a minute. Try again shortly.' };
+  if (r.status === 403) return { ok: false, error: 'The spam check didn’t pass. Try again.' };
+  return { ok: false, error: 'Couldn’t send it. Try again later.' };
+}
+
+// The unsent note and any notes waiting for a connection survive a reload. localStorage, try/catch as everywhere else.
+const DRAFT_KEY = 'jtc-feedback-draft-v1';
+const OUTBOX_KEY = 'jtc-feedback-outbox-v1';
+const valid = (d: unknown): d is Note => !!d && isKind((d as Note).kind) && typeof (d as Note).message === 'string';
+
+export function loadDraft(): Note {
+  try { const d = JSON.parse(localStorage.getItem(DRAFT_KEY) || 'null'); if (valid(d)) return d; } catch { /* storage blocked */ }
   return { kind: 'bug', message: '' };
 }
-export function saveDraft(d: { kind: FeedbackKind; message: string }) {
+export function saveDraft(d: Note) {
   try { if (d.message) localStorage.setItem(DRAFT_KEY, JSON.stringify(d)); else localStorage.removeItem(DRAFT_KEY); } catch { /* storage blocked */ }
+}
+export function loadOutbox(): Note[] {
+  try { const l = JSON.parse(localStorage.getItem(OUTBOX_KEY) || '[]'); if (Array.isArray(l)) return l.filter(valid); } catch { /* storage blocked */ }
+  return [];
+}
+export function saveOutbox(l: Note[]) {
+  try { if (l.length) localStorage.setItem(OUTBOX_KEY, JSON.stringify(l)); else localStorage.removeItem(OUTBOX_KEY); } catch { /* storage blocked */ }
 }

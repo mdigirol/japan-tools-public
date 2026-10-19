@@ -14,7 +14,8 @@ Phone-first offline web app for a Japan trip. Public demo: `data/sample/trip.jso
 
 Changes here are often copied into the private `japan-trip-tools`. These belong to this repo only; leave them out of any port:
 
-- **Feedback form** (bottom of More): `src/lib/feedback.ts`, `src/components/Feedback.tsx`, `tests/unit/feedback.test.ts`, and the `<Feedback />` line in `src/routes/More.tsx`. It opens a prefilled public issue on `mdigirol/japan-trip-tools-public`, so in the private app it would publish real trip details. Guards: the form renders only when the base path is `/japan-trip-tools-public/`, and `tests/unit/feedback.test.ts` fails in a repo with any other package name.
+- **Feedback form and relay** (bottom of More): `src/lib/feedback.ts`, `src/lib/feedbackIssue.ts`, `src/components/Feedback.tsx`, `worker/feedback/`, `tests/unit/feedback.test.ts`, the feedback test in `tests/e2e/app.spec.ts`, the `<Feedback />` line in `src/routes/More.tsx`, the `VITE_FEEDBACK_URL`/`VITE_TURNSTILE_SITE_KEY` lines in `.github/workflows/deploy.yml` and `playwright.config.ts`, and `"worker"` in `tsconfig.json`. Notes become public issues on `mdigirol/japan-trip-tools-public`, so in the private app they would publish real trip details. Guards: the form renders only when the base path is `/japan-trip-tools-public/`, and `tests/unit/feedback.test.ts` fails in a repo with any other package name.
+- The relay is a Cloudflare Worker (`worker/feedback/README.md`). Its GitHub token is a Cloudflare secret only. `FEEDBACK_URL` and `TURNSTILE_SITE_KEY` are public repo variables, not secrets. Pushing to `main` doesn't deploy the Worker; run `npx wrangler@4 deploy` in `worker/feedback/`.
 
 ## Content
 
@@ -31,7 +32,7 @@ Changes here are often copied into the private `japan-trip-tools`. These belong 
 - The app reads `data/local/trip.json` and `data/local/konbini-near-stops.json` when `data/local/trip.json` exists, otherwise `data/sample/`. Files are never mixed. Code imports them as `@data/<file>` (`scripts/build-env.ts`).
 - `data/local/` is untracked in this repo. A repo that deliberately tracks its own itinerary there (a personal companion that merges this one) opts in by committing an empty `data/local/.tracked-ok`.
 - Scenario tests (Today, content, konbini) and the e2e build always use `data/sample/`, so they pass in any repo. `tests/unit/trip.test.ts` checks both the sample and the active data.
-- Optional build-time settings, set in a `.env` file or the environment: `VITE_DATA_REPO` (turns purchase sync on) and `VITE_ITINERARY_URL` (shows "Open this day in the itinerary" on Today).
+- Optional build-time settings, set in a `.env` file or the environment: `VITE_DATA_REPO` (turns purchase sync on) and `VITE_ITINERARY_URL` (shows "Open this day in the itinerary" on Today). Public repo only: `VITE_FEEDBACK_URL` and `VITE_TURNSTILE_SITE_KEY` (the feedback relay).
 - The base path is the repo name on Pages (`GITHUB_REPOSITORY`), else the folder name. Override with `BASE_PATH`.
 
 ## Code
