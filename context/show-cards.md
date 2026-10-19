@@ -9,7 +9,7 @@ The header line is the same on every hotel card:
 > この住所までお願いします。
 > *Kono juusho made onegaishimasu.* "Please take me to this address." `[V]`
 
-Hotel cards come from `src/data/trip.json` (`stays`). The public demo uses four well-known hotels as samples; replace them with your own.
+Hotel cards come from `trip.json` (`stays`; `data/local/` if present, else `data/sample/`). The public demo uses four well-known hotels as samples; replace them with your own.
 
 - **Which card shows.** Today shows the card for *tonight's* hotel. On a travel day, the card switches at check-in time. Before that, it shows both hotels, with the new one first.
 - **Phone number.** Tapping the number dials it. A driver can call the hotel if the address isn't enough.

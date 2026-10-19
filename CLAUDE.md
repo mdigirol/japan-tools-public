@@ -1,13 +1,14 @@
 # Japan Trip Companion — conventions
 
-Phone-first offline web app for a Japan trip. Public demo: `src/data/trip.json` is a sample itinerary (Nov 11–27, 2026). Content notes: `context/`.
+Phone-first offline web app for a Japan trip. Public demo: `data/sample/trip.json` is a sample itinerary (Nov 11–27, 2026). Content notes: `context/`.
 
 ## Public repo rules
 
 - **This repo and site are public.** Commit nothing confidential: no booking or confirmation numbers, reservation names, prices paid, tokens or keys, and no personal names or real itineraries.
 - The sync token lives only on the phones (localStorage). Never in source, the build, the workflow or a test fixture.
 - Souvenir recipients and purchases live only on the phones (and, if sync is on, in the private repo named by `VITE_DATA_REPO`).
-- `src/data/trip.json` is sample data. `tests/unit/trip.test.ts` fails the build on anything outside the schema or anything that looks like a booking number, price, token or clock time. Don't loosen it; fix the data.
+- `data/sample/trip.json` is sample data. `tests/unit/trip.test.ts` fails the build on anything outside the schema or anything that looks like a booking number, price, token or clock time. Don't loosen it; fix the data.
+- Real itineraries go in `data/local/` (see Data below). It is gitignored here, and `tests/unit/data-local.test.ts` fails if any of it is tracked.
 
 ## Content
 
@@ -18,6 +19,14 @@ Phone-first offline web app for a Japan trip. Public demo: `src/data/trip.json` 
 - Copyright: never paste text from the purchased guides. Paraphrase only. The guides stay in Dropbox.
 - No dietary or allergy content (D10). No flashcards (D4). No shared favorites (D6).
 - UI copy: short, plain, specific. One idea per line on cards.
+
+## Data
+
+- The app reads `data/local/trip.json` and `data/local/konbini-near-stops.json` when `data/local/trip.json` exists, otherwise `data/sample/`. Files are never mixed. Code imports them as `@data/<file>` (`scripts/build-env.ts`).
+- `data/local/` is untracked in this repo. A repo that deliberately tracks its own itinerary there (a personal companion that merges this one) opts in by committing an empty `data/local/.tracked-ok`.
+- Scenario tests (Today, content, konbini) and the e2e build always use `data/sample/`, so they pass in any repo. `tests/unit/trip.test.ts` checks both the sample and the active data.
+- Optional build-time settings, set in a `.env` file or the environment: `VITE_DATA_REPO` (turns purchase sync on) and `VITE_ITINERARY_URL` (shows "Open this day in the itinerary" on Today).
+- The base path is the repo name on Pages (`GITHUB_REPOSITORY`), else the folder name. Override with `BASE_PATH`.
 
 ## Code
 
@@ -33,10 +42,10 @@ Phone-first offline web app for a Japan trip. Public demo: `src/data/trip.json` 
 ## Commands
 
 - `npm run dev` — dev server at http://localhost:5173/japan-trip-tools-public/
-- `npm test` — Vitest (logic, content schemas, trip.json confidentiality)
-- `npm run test:e2e` — Playwright against the production build (offline, `?now=` scenarios, cards, claim log)
+- `npm test` — Vitest on the sample itinerary (logic, content schemas), plus trip.json confidentiality on the sample and the active data
+- `npm run test:e2e` — Playwright against a production build of the sample itinerary in `dist-e2e/` (offline, `?now=` scenarios, cards, claim log)
 - `npm run build` — typecheck and build to `dist/`
-- `npm run build-konbini` — refresh the offline konbini list from Overpass
+- `npm run build-konbini` — refresh the offline konbini list from Overpass (writes next to the active `trip.json`)
 - `npm run review-sheet` / `npm run review-import` — the Japanese review round trip
 
 ## Deploys

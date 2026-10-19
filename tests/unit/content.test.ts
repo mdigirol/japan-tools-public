@@ -9,7 +9,7 @@ import { showCards } from '../../src/data/showCards';
 import { glossary } from '../../src/data/glossary';
 import { areaTips } from '../../src/data/places';
 import { numbers } from '../../src/data/emergency';
-import trip from '../../src/data/trip.json';
+import trip from '@data/trip.json';
 import { matchPhrase } from '../../src/routes/Phrases';
 
 const ctx = (f: string) => readFileSync(new URL(`../../context/${f}`, import.meta.url), 'utf8');

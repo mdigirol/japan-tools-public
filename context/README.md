@@ -13,7 +13,7 @@ Every item carries one tag. Keep the tag when you turn the item into data (`sour
 | `[N]` | Nina's Japan Travel Guide (2026, 57 pp.), a general guide from a Japanese-American traveler |
 | `[K]` | Insiders Kyoto Travel Guide (Farr East, 182 pp.) |
 | `[T]` | The Ultimate Tokyo Guide, Bonus Included (Farr East, 2026, 261 pp.) |
-| `[I]` | The trip itinerary (exported to `src/data/trip.json`) |
+| `[I]` | The trip itinerary (exported to `data/local/trip.json`; the demo uses `data/sample/`) |
 | `[JNTO]` | [JNTO news post on the tax-free change](https://www.japan.travel/en/ca/news/changes-are-coming-to-japans-tax-free-shopping/), read 2026-10-18 |
 | `[V]` | General knowledge, not in the guides. **Verify against an official source** (safety items before the trip, the rest later). |
 

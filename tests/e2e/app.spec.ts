@@ -1,7 +1,8 @@
 import { expect, test, type Page } from '@playwright/test';
 import { readFileSync } from 'node:fs';
+import { dataFile } from '../../scripts/build-env';
 
-const trip = JSON.parse(readFileSync(new URL('../../src/data/trip.json', import.meta.url), 'utf8')) as {
+const trip = JSON.parse(readFileSync(dataFile('trip.json', 'sample'), 'utf8')) as {
   stays: { id: string; addrJa: string }[]; days: { hoods: { name: string; blurb: string }[] }[];
 };
 

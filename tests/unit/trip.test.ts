@@ -1,23 +1,22 @@
-// trip.json: schema, shape, and the confidentiality rules for a public repo.
+// trip.json: schema, shape, and the confidentiality rules. Runs on the data the app builds with
+// (data/local if present) and on the shared sample, so a repo with real data is guarded too.
 import { describe, expect, it } from 'vitest';
 import { readFileSync } from 'node:fs';
+import { sep } from 'node:path';
 import { TripFile } from '../../src/data/schema';
+import { dataFile } from '../../scripts/build-env';
 
-const raw = readFileSync(new URL('../../src/data/trip.json', import.meta.url), 'utf8');
-const trip = JSON.parse(raw);
+const datasets = [...new Set([dataFile('trip.json'), dataFile('trip.json', 'sample')])]
+  .map((path) => ({ label: path.includes(`${sep}local${sep}`) ? 'local' : 'sample', path }));
 
-describe('trip.json', () => {
+describe.each(datasets)('trip.json ($label)', ({ path }) => {
+  const raw = readFileSync(path, 'utf8');
+  const trip = JSON.parse(raw);
+
   it('passes the strict schema (no keys outside it)', () => {
     const r = TripFile.safeParse(trip);
     if (!r.success) console.error(r.error.issues);
     expect(r.success).toBe(true);
-  });
-
-  it('has 17 days, Nov 11–27, and four stays', () => {
-    expect(trip.days).toHaveLength(17);
-    expect(trip.days[0].date).toBe('2026-11-11');
-    expect(trip.days[16].date).toBe('2026-11-27');
-    expect(trip.stays.map((s: { id: string }) => s.id)).toEqual(['tokyo-1', 'hakone', 'kyoto', 'tokyo-2']);
   });
 
   it('has a Japanese postal address for every hotel', () => {
@@ -50,5 +49,16 @@ describe('trip.json', () => {
   it('only has hotel front-desk phone numbers', () => {
     const phones = raw.match(/\+81[\d -]+/g) ?? [];
     expect(phones.sort()).toEqual(trip.stays.map((s: { tel: string }) => s.tel).sort());
+  });
+});
+
+describe('sample trip.json', () => {
+  const trip = JSON.parse(readFileSync(dataFile('trip.json', 'sample'), 'utf8'));
+
+  it('has 17 days, Nov 11–27, and four stays', () => {
+    expect(trip.days).toHaveLength(17);
+    expect(trip.days[0].date).toBe('2026-11-11');
+    expect(trip.days[16].date).toBe('2026-11-27');
+    expect(trip.stays.map((s: { id: string }) => s.id)).toEqual(['tokyo-1', 'hakone', 'kyoto', 'tokyo-2']);
   });
 });

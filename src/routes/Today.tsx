@@ -8,7 +8,7 @@ import { href } from '../lib/router';
 import { useSettings } from '../lib/settings';
 import { showCard, telDisplay } from '../lib/showcard';
 import { hotelCard } from '../lib/hotelCard';
-import { stayById, trip, todayState, weatherCities, type TodayState } from '../lib/trip';
+import { itineraryDayUrl, stayById, trip, todayState, weatherCities, type TodayState } from '../lib/trip';
 import { cachedWeather, cToF, refreshWeather, type CityWeather } from '../lib/weather';
 import { stamp } from '../lib/now';
 import { Tiles } from '../components/Tiles';
@@ -75,6 +75,7 @@ function DayBody({ st }: { st: TodayState }) {
   const ymd = preview ? '2026-11-12' : st.ymd;
   const shownDay = preview ? undefined : day;
   const previewDay = preview ? (st.phase === 'air-out' ? undefined : day) : day;
+  const itineraryLink = itineraryDayUrl(ymd);
   return (
     <>
       {day.note && !preview && <div class="card tight small">{day.note}</div>}
@@ -82,6 +83,12 @@ function DayBody({ st }: { st: TodayState }) {
       {previewDay && <Hoods day={previewDay} />}
       <Hotels st={st} />
       {st.flightHome && <UnclaimedNotice nov27 />}
+      {itineraryLink && (
+        <>
+          <a class="btn block" href={itineraryLink} target="_blank" rel="noopener">Open this day in the itinerary ↗</a>
+          <p class="small faint" style="margin-top:4px">The itinerary asks for its password. If it lands on the top, pick {longDate(ymd).replace(/^\w+, /, '')}.</p>
+        </>
+      )}
       <Suggested st={st} />
     </>
   );

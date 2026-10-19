@@ -2,7 +2,7 @@
 
 A phone-first, offline web app for a trip to Japan: what to say, do, or pay, right now.
 
-This is a public copy for testing. The itinerary in `src/data/trip.json` is a **sample** 17-day trip (Tokyo → Hakone → Kyoto → Tokyo, Nov 11–27, 2026). The four hotels are well-known hotels used as placeholders, not real bookings.
+This is a public copy for testing. The itinerary in `data/sample/trip.json` is a **sample** 17-day trip (Tokyo → Hakone → Kyoto → Tokyo, Nov 11–27, 2026). The four hotels are well-known hotels used as placeholders, not real bookings.
 
 ## Try it
 
@@ -38,7 +38,11 @@ All Japanese is a draft that hasn't had a native-speaker review yet. Dev builds 
 
 ## Use your own trip
 
-Replace `src/data/trip.json` with your own stays and days. `tests/unit/trip.test.ts` checks it against the schema in `src/data/schema.ts` and rejects anything that looks like a booking number, price or token. Then run `npm run build-konbini` to refresh the offline konbini list for your stops.
+Put your own stays and days in `data/local/trip.json`. The app uses it instead of the sample when it exists, and `data/local/` is gitignored so your plans stay out of commits. `tests/unit/trip.test.ts` checks it against the schema in `src/data/schema.ts` and rejects anything that looks like a booking number, price or token. Then run `npm run build-konbini` to write an offline konbini list for your stops next to it.
+
+To deploy your own copy with your data, commit `data/local/` to your fork (`git add -f data/local`) along with an empty `data/local/.tracked-ok`, which tells the leak guard that this is deliberate.
+
+Set `VITE_ITINERARY_URL` (for example in a `.env` file) to add an "Open this day in the itinerary" link on Today.
 
 ## Optional: sync purchases between two phones
 
