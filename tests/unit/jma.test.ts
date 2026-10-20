@@ -21,9 +21,9 @@ describe('JMA area links', () => {
     expect(nearestJmaArea({ lat: 43.0621, lng: 141.3544 })).toBeUndefined();              // Sapporo
   });
   it('picks the area from the day’s own stops, per city', () => {
-    const d15 = dayByDate('2026-11-15')!;   // Meiji Jingu → Harajuku → Shibuya
+    const d15 = dayByDate('2026-10-26')!;   // Meiji Jingu → Harajuku → Shibuya
     expect(jmaAreaForCity(cityCoords.tokyo, d15).city).toBe('tokyo');
-    const d25 = dayByDate('2026-11-25')!;   // DisneySea
+    const d25 = dayByDate('2026-11-07')!;   // DisneySea
     expect(jmaAreaForCity(cityCoords.tokyo, d25).name).toBe('Urayasu City');
   });
   it('gives every weather city on every day an area in that city', () => {

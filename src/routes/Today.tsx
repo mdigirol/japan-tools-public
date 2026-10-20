@@ -32,7 +32,7 @@ function Header({ st }: { st: TodayState }) {
     return (
       <header class="today-head">
         <h1>{st.daysToGo === 1 ? '1 day to go' : `${st.daysToGo} days to go`}</h1>
-        <p class="leg">Flight on Wed, Nov 11. Here’s a preview of your first day, Nov 12.</p>
+        <p class="leg">Flight on Thu, Oct 22. Here’s a preview of your first day, Oct 23.</p>
       </header>
     );
   }
@@ -40,7 +40,7 @@ function Header({ st }: { st: TodayState }) {
     return (
       <header class="today-head">
         <h1>{longDate(st.ymd)} · In the air</h1>
-        <p class="leg">You land tomorrow, Nov 12.</p>
+        <p class="leg">You land tomorrow, Oct 23.</p>
       </header>
     );
   }
@@ -52,7 +52,7 @@ function Header({ st }: { st: TodayState }) {
     <header class="today-head">
       <h1>{longDate(st.ymd)} · {st.city}</h1>
       <p class="leg">
-        Day {st.dayNumber} of 17
+        Day {st.dayNumber} of 20
         {leg && !st.flightHome && <> · {st.city}, night {leg.night} of {leg.nights}</>}
         {st.flightHome && <> · Flight home tonight</>}
       </p>
@@ -73,7 +73,7 @@ function DayBody({ st }: { st: TodayState }) {
   const day = st.day;
   if (!day) return null;
   const preview = st.phase === 'before' || st.phase === 'air-out';
-  const ymd = preview ? '2026-11-12' : st.ymd;
+  const ymd = preview ? '2026-10-23' : st.ymd;
   const shownDay = preview ? undefined : day;
   const previewDay = preview ? (st.phase === 'air-out' ? undefined : day) : day;
   const itineraryLink = itineraryDayUrl(ymd);
@@ -213,7 +213,7 @@ function HotelCompact({ s, label, secondary }: { s: Stay; label: string; seconda
 function Hotels({ st }: { st: TodayState }) {
   if (st.phase === 'before' || st.phase === 'air-out') {
     const first = stayById(trip.stays[0]?.id);
-    return first ? <section><h2>First hotel</h2><HotelCompact s={first} label="Nov 12–17" /></section> : null;
+    return first ? <section><h2>First hotel</h2><HotelCompact s={first} label="Oct 23–29" /></section> : null;
   }
   if (!st.primary) return null;
   if (st.flightHome) {

@@ -1,5 +1,5 @@
 // Trip clock. All date logic uses Asia/Tokyo time.
-// ?now=2026-11-21T08:00%2B09:00 overrides the clock for testing, like the itinerary's.
+// ?now=2026-11-02T08:00%2B09:00 overrides the clock for testing, like the itinerary's.
 
 let override: Date | null | undefined;
 
@@ -32,7 +32,7 @@ export function tokyo(d: Date = now()): TokyoParts {
   return { y, m, d: day, hh, mm, dow: p.weekday, minutes: hh * 60 + mm, ymd: `${p.year}-${p.month}-${p.day}` };
 }
 
-// "Sat, Nov 21" for a YYYY-MM-DD date.
+// "Mon, Nov 2" for a YYYY-MM-DD date.
 export function longDate(ymd: string): string {
   const [y, m, d] = ymd.split('-').map(Number);
   const dt = new Date(Date.UTC(y, m - 1, d, 3));

@@ -2,7 +2,7 @@
 
 A phone-first, offline web app for a trip to Japan: what to say, do, or pay, right now.
 
-This is a public copy for testing. The itinerary in `data/sample/trip.json` is a **sample** 17-day trip (Tokyo → Hakone → Kyoto → Tokyo, Nov 11–27, 2026). The four hotels are well-known hotels used as placeholders, not real bookings.
+This is a public copy for testing. The itinerary in `data/sample/trip.json` is a **sample** 20-day trip (Tokyo → Hakone → Kyoto → Tokyo, Oct 22–Nov 10, 2026). The four hotels are well-known hotels used as placeholders, not real bookings.
 
 ## Try it
 
@@ -13,10 +13,10 @@ npm run dev          # http://localhost:5173/japan-trip-tools-public/
 
 The app follows the trip's dates, so add `?now=` to any URL to pick a moment:
 
-- `?now=2026-11-12T18:00%2B09:00` (first night in Tokyo)
-- `?now=2026-11-17T10:00%2B09:00` (travel day to Hakone, before check-in)
-- `?now=2026-11-21T08:00%2B09:00` (Kyoto)
-- `?now=2026-11-27T08:00%2B09:00` (flying home)
+- `?now=2026-10-23T18:00%2B09:00` (first night in Tokyo)
+- `?now=2026-10-29T10:00%2B09:00` (travel day to Hakone, before check-in)
+- `?now=2026-11-02T08:00%2B09:00` (Kyoto)
+- `?now=2026-11-10T08:00%2B09:00` (flying home)
 
 To install on an iPhone: open the site in Safari while online, Share → **Add to Home Screen**, then open it once from the home screen. Settings shows **Ready for offline ✓** when the cache is full.
 

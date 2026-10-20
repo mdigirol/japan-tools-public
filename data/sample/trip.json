@@ -10,8 +10,8 @@
       "tel": "+81 3-5322-1234",
       "lat": 35.6856,
       "lng": 139.6909,
-      "from": "2026-11-12",
-      "to": "2026-11-17",
+      "from": "2026-10-23",
+      "to": "2026-10-29",
       "checkIn": "15:00"
     },
     {
@@ -23,8 +23,8 @@
       "tel": "+81 460-82-2211",
       "lat": 35.2436,
       "lng": 139.0698,
-      "from": "2026-11-17",
-      "to": "2026-11-19",
+      "from": "2026-10-29",
+      "to": "2026-10-31",
       "checkIn": "15:00"
     },
     {
@@ -36,8 +36,8 @@
       "tel": "+81 75-344-8888",
       "lat": 34.9858,
       "lng": 135.7588,
-      "from": "2026-11-19",
-      "to": "2026-11-23",
+      "from": "2026-10-31",
+      "to": "2026-11-05",
       "checkIn": "15:00"
     },
     {
@@ -49,15 +49,15 @@
       "tel": "+81 3-3504-1111",
       "lat": 35.6727,
       "lng": 139.7586,
-      "from": "2026-11-23",
-      "to": "2026-11-27",
+      "from": "2026-11-05",
+      "to": "2026-11-10",
       "checkIn": "15:00"
     }
   ],
   "days": [
     {
-      "date": "2026-11-11",
-      "dow": "Wed",
+      "date": "2026-10-22",
+      "dow": "Thu",
       "seg": "air",
       "places": [],
       "area": "Flying to Tokyo",
@@ -67,8 +67,8 @@
       "stayTonight": "air"
     },
     {
-      "date": "2026-11-12",
-      "dow": "Thu",
+      "date": "2026-10-23",
+      "dow": "Fri",
       "seg": "t1",
       "places": [
         "tokyo"
@@ -98,8 +98,8 @@
       "stayTonight": "tokyo-1"
     },
     {
-      "date": "2026-11-13",
-      "dow": "Fri",
+      "date": "2026-10-24",
+      "dow": "Sat",
       "seg": "t1",
       "places": [
         "tokyo"
@@ -141,8 +141,8 @@
       "stayLastNight": "tokyo-1"
     },
     {
-      "date": "2026-11-14",
-      "dow": "Sat",
+      "date": "2026-10-25",
+      "dow": "Sun",
       "seg": "t1",
       "places": [
         "tokyo"
@@ -184,8 +184,8 @@
       "stayLastNight": "tokyo-1"
     },
     {
-      "date": "2026-11-15",
-      "dow": "Sun",
+      "date": "2026-10-26",
+      "dow": "Mon",
       "seg": "t1",
       "places": [
         "tokyo"
@@ -236,8 +236,8 @@
       "stayLastNight": "tokyo-1"
     },
     {
-      "date": "2026-11-16",
-      "dow": "Mon",
+      "date": "2026-10-27",
+      "dow": "Tue",
       "seg": "t1",
       "places": [
         "tokyo"
@@ -278,8 +278,22 @@
       "stayLastNight": "tokyo-1"
     },
     {
-      "date": "2026-11-17",
-      "dow": "Tue",
+      "date": "2026-10-28",
+      "dow": "Wed",
+      "seg": "t1",
+      "places": [
+        "tokyo"
+      ],
+      "area": "Free day in Tokyo",
+      "hoods": [],
+      "venues": [],
+      "points": [],
+      "stayTonight": "tokyo-1",
+      "stayLastNight": "tokyo-1"
+    },
+    {
+      "date": "2026-10-29",
+      "dow": "Thu",
       "seg": "hk",
       "places": [
         "hakone",
@@ -312,8 +326,8 @@
       "stayLastNight": "tokyo-1"
     },
     {
-      "date": "2026-11-18",
-      "dow": "Wed",
+      "date": "2026-10-30",
+      "dow": "Fri",
       "seg": "hk",
       "places": [
         "hakone"
@@ -345,8 +359,8 @@
       "stayLastNight": "hakone"
     },
     {
-      "date": "2026-11-19",
-      "dow": "Thu",
+      "date": "2026-10-31",
+      "dow": "Sat",
       "seg": "ky",
       "places": [
         "kyoto",
@@ -388,8 +402,8 @@
       "stayLastNight": "hakone"
     },
     {
-      "date": "2026-11-20",
-      "dow": "Fri",
+      "date": "2026-11-01",
+      "dow": "Sun",
       "seg": "ky",
       "places": [
         "kyoto",
@@ -432,8 +446,8 @@
       "stayLastNight": "kyoto"
     },
     {
-      "date": "2026-11-21",
-      "dow": "Sat",
+      "date": "2026-11-02",
+      "dow": "Mon",
       "seg": "ky",
       "places": [
         "kyoto",
@@ -475,8 +489,8 @@
       "stayLastNight": "kyoto"
     },
     {
-      "date": "2026-11-22",
-      "dow": "Sun",
+      "date": "2026-11-03",
+      "dow": "Tue",
       "seg": "ky",
       "places": [
         "kyoto"
@@ -517,8 +531,22 @@
       "stayLastNight": "kyoto"
     },
     {
-      "date": "2026-11-23",
-      "dow": "Mon",
+      "date": "2026-11-04",
+      "dow": "Wed",
+      "seg": "ky",
+      "places": [
+        "kyoto"
+      ],
+      "area": "Free day in Kyoto",
+      "hoods": [],
+      "venues": [],
+      "points": [],
+      "stayTonight": "kyoto",
+      "stayLastNight": "kyoto"
+    },
+    {
+      "date": "2026-11-05",
+      "dow": "Thu",
       "seg": "t2",
       "places": [
         "tokyo",
@@ -551,8 +579,8 @@
       "stayLastNight": "kyoto"
     },
     {
-      "date": "2026-11-24",
-      "dow": "Tue",
+      "date": "2026-11-06",
+      "dow": "Fri",
       "seg": "t2",
       "places": [
         "tokyo"
@@ -593,8 +621,8 @@
       "stayLastNight": "tokyo-2"
     },
     {
-      "date": "2026-11-25",
-      "dow": "Wed",
+      "date": "2026-11-07",
+      "dow": "Sat",
       "seg": "t2",
       "places": [
         "tokyo",
@@ -625,8 +653,22 @@
       "stayLastNight": "tokyo-2"
     },
     {
-      "date": "2026-11-26",
-      "dow": "Thu",
+      "date": "2026-11-08",
+      "dow": "Sun",
+      "seg": "t2",
+      "places": [
+        "tokyo"
+      ],
+      "area": "Free day in Tokyo",
+      "hoods": [],
+      "venues": [],
+      "points": [],
+      "stayTonight": "tokyo-2",
+      "stayLastNight": "tokyo-2"
+    },
+    {
+      "date": "2026-11-09",
+      "dow": "Mon",
       "seg": "t2",
       "places": [
         "tokyo"
@@ -667,8 +709,8 @@
       "stayLastNight": "tokyo-2"
     },
     {
-      "date": "2026-11-27",
-      "dow": "Fri",
+      "date": "2026-11-10",
+      "dow": "Tue",
       "seg": "t2",
       "places": [
         "tokyo"

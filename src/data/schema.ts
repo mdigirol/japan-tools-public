@@ -68,7 +68,7 @@ export const EmergencyNumber = z.strictObject({
 export type EmergencyNumber = z.infer<typeof EmergencyNumber>;
 
 // ---- trip.json (exported from the itinerary; §7) ----
-const ymd = z.string().regex(/^2026-11-\d{2}$/);
+const ymd = z.string().regex(/^2026-(10|11)-\d{2}$/);
 export const Stay = z.strictObject({
   id: z.string(), name: z.string(), nameJa: z.string(), addrEn: z.string(), addrJa: z.string(),
   tel: z.string().regex(/^\+81 [0-9-]+$/), lat: z.number(), lng: z.number(), from: ymd, to: ymd,

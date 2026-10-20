@@ -88,8 +88,8 @@ function ClaimLog({ list, checklist }: { list: Purchase[]; checklist: boolean })
   const t = claimTotals(items);
   const days = storeDays(items);
   const short = days.filter((d) => !d.ok);
-  const isNov27 = tokyo(now()).ymd === '2026-11-27';
-  const check = checklist || isNov27;
+  const isLastDay = tokyo(now()).ymd === '2026-11-10';
+  const check = checklist || isLastDay;
   const bags = new Map<string, Purchase[]>();
   for (const p of items) { const b = p.bag || 'No bag set'; bags.set(b, [...(bags.get(b) ?? []), p]); }
   const order = [...s.bags, 'No bag set', ...[...bags.keys()].filter((b) => !s.bags.includes(b) && b !== 'No bag set')];

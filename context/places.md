@@ -23,7 +23,7 @@ Keys match how the itinerary names areas, so Today can match a day's `HOODS` ent
 - **Kappabashi (`kappabashi`)** · Kitchenware street, so see the knife words in `money-and-shopping.md`. Many shops close Sundays. Knives are tax-free eligible if you spend ¥5,000 or more at one shop. [N][V]
 - **Maihama / DisneySea (`maihama`)** · Book date tickets and use the Tokyo Disney Resort app for Premier Access and mobile ordering. English is widely spoken. [T][V]
 - **Meiji Jingu and Yoyogi (`meiji-jingu`)** · Shinto shrine, so wash at the basin and follow the two-bow, two-clap, one-bow rule. Weddings are common; don't photograph the party up close. [T][V]
-- **Haneda (`haneda`)** · Nov 27: leave extra time at customs, before check-in, to claim the tax-free refund. See the tax-free claim log. [N][V]
+- **Haneda (`haneda`)** · Nov 10: leave extra time at customs, before check-in, to claim the tax-free refund. See the tax-free claim log. [N][V]
 
 ## Hakone
 

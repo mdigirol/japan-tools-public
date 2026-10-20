@@ -12,7 +12,7 @@ const fmtDist = (m: number) => m < 1000 ? `${Math.round(m / 10) * 10} m` : `${(m
 
 export function Konbini() {
   const st = todayState(now());
-  const ymd = st.phase === 'during' ? st.ymd : '2026-11-12';
+  const ymd = st.phase === 'during' ? st.ymd : '2026-10-23';
   const today = data.days[ymd] ?? [];
   const [live, setLive] = useState<Row[] | null>(null);
   const [msg, setMsg] = useState('');
@@ -43,7 +43,7 @@ export function Konbini() {
         <a class="btn grow" href={MAPS_SEARCH_KONBINI} target="_blank" rel="noopener">コンビニ in Maps ↗</a>
       </div>
       {msg && <p class="small" role="status" data-testid="konbini-msg">{msg}</p>}
-      <h2>{live ? 'Near you' : `Near today’s areas and hotel${st.phase === 'during' ? '' : ' (Nov 12)'}`}</h2>
+      <h2>{live ? 'Near you' : `Near today’s areas and hotel${st.phase === 'during' ? '' : ' (Oct 23)'}`}</h2>
       {!list.length && <div class="empty">No saved stores for this day.</div>}
       {list.slice(0, 30).map((k) => (
         <a class="card tight row" href={mapsLink(k)} target="_blank" rel="noopener" key={k.lat + ',' + k.lng} style="text-decoration:none;color:inherit">

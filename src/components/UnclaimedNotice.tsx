@@ -2,7 +2,7 @@ import { fmtYen } from '../lib/rates';
 import { claimTotals, usePurchases } from '../lib/purchases';
 import { href } from '../lib/router';
 
-// Shown after the trip, and on Nov 27, when tax-free items haven't been ticked at customs.
+// Shown after the trip, and on Nov 10, when tax-free items haven't been ticked at customs.
 export function UnclaimedNotice({ nov27 }: { nov27?: boolean }) {
   const l = usePurchases();
   if (!l) return null;
