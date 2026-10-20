@@ -51,5 +51,5 @@ for (const day of trip.days) {
 }
 
 writeFileSync(OUT, JSON.stringify(out) + '\n');
-const empty = Object.entries(out.days).filter(([d, l]) => !l.length && d !== '2026-11-11').map(([d]) => d);
+const empty = Object.entries(out.days).filter(([d, l]) => !l.length && d !== '2026-10-22').map(([d]) => d);
 console.log(`Wrote ${OUT}.` + (empty.length ? ` Empty days (rerun to retry): ${empty.join(', ')}` : ''));

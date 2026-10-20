@@ -29,7 +29,7 @@ From **November 1, 2026**, Japan switches to a refund system. [N][JNTO]
 - You have 90 days, up from 30, to take the goods out of Japan. [JNTO]
 - Show your passport at the shop; it's logged electronically. [JNTO]
 - Look for the "Japan. Tax-free Shop" sign. Don Quijote, Uniqlo, GU, LOFT and Bic Camera participate. [N]
-- **For the app:** this is why the tax-free claim log exists. On Nov 27 at Haneda it becomes a checklist of items, receipts and the bag each is packed in, with the total due. Budget extra airport time. [N]
+- **For the app:** this is why the tax-free claim log exists. On Nov 10 at Haneda it becomes a checklist of items, receipts and the bag each is packed in, with the total due. Budget extra airport time. [N]
 - Source to cite in the app: [JNTO: Changes are coming to Japan's tax-free shopping](https://www.japan.travel/en/ca/news/changes-are-coming-to-japans-tax-free-shopping/). Check the Japan Tourism Agency page for the final procedure before the trip. [V]
 
 ## Sizes
@@ -50,7 +50,7 @@ From Nina [N]:
 
 From the Kyoto guide [K]: buy matcha from a specialist (Ippodo in Kyoto, or Uji shops), not tourist stalls. Ask staff which grade suits how you'll use it.
 
-## Knife words for Kappabashi (Nov 27)
+## Knife words for Kappabashi (Nov 10)
 
 All `[V]`; check with a native speaker or a knife shop's English page.
 

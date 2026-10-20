@@ -4,8 +4,8 @@ import type { Place, Stay, TripDay, TripFile } from '../data/schema';
 import { daysBetween, hhmmToMinutes, tokyo } from './now';
 
 export const trip = tripJson as TripFile;
-export const TRIP_START = '2026-11-11';
-export const TRIP_END = '2026-11-27';
+export const TRIP_START = '2026-10-22';
+export const TRIP_END = '2026-11-10';
 export const DEFAULT_CHECKIN = '15:00';
 // Optional: set VITE_ITINERARY_URL at build time to show an "Open this day in the itinerary" link on Today.
 export const ITINERARY_URL: string = import.meta.env.VITE_ITINERARY_URL ?? '';
@@ -19,13 +19,13 @@ export interface TodayState {
   phase: 'before' | 'air-out' | 'during' | 'after';
   ymd: string;                       // Tokyo date now
   day?: TripDay;                     // the trip day (or the preview day before the trip)
-  dayNumber?: number;                // 1–17
+  dayNumber?: number;                // 1–20
   daysToGo?: number;                 // before the trip
   city: string;
   leg?: { stay: Stay; night: number; nights: number };
   primary?: Stay;                    // the hotel card to show first
   checkingOut?: Stay;                // travel days, before tonight's check-in
-  flightHome?: boolean;              // Nov 27
+  flightHome?: boolean;              // Nov 10
 }
 
 function nightsOf(s: Stay) { return daysBetween(s.from, s.to); }
@@ -34,7 +34,7 @@ export function todayState(at: Date): TodayState {
   const t = tokyo(at);
   const ymd = t.ymd;
   if (ymd < TRIP_START) {
-    return { phase: 'before', ymd, daysToGo: daysBetween(ymd, TRIP_START), day: dayByDate('2026-11-12'), city: 'Tokyo' };
+    return { phase: 'before', ymd, daysToGo: daysBetween(ymd, TRIP_START), day: dayByDate('2026-10-23'), city: 'Tokyo' };
   }
   if (ymd > TRIP_END) return { phase: 'after', ymd, city: 'Home' };
   const day = dayByDate(ymd)!;
@@ -46,7 +46,7 @@ export function todayState(at: Date): TodayState {
   const state: TodayState = { phase: 'during', ymd, day, dayNumber, city: SEG_CITY[day.seg] };
 
   if (!tonight) {
-    // Nov 27: checked out, bags held at last night's hotel, flying home tonight.
+    // Nov 10: checked out, bags held at last night's hotel, flying home tonight.
     state.primary = last;
     state.flightHome = true;
     if (last) state.leg = { stay: last, night: nightsOf(last), nights: nightsOf(last) };

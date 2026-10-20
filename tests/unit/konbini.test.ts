@@ -3,7 +3,7 @@ import data from '@data/konbini-near-stops.json';
 import { brandOf, distM } from '../../src/lib/overpass';
 
 const days = (data as { days: Record<string, { lat: number; lng: number; nearHotel: boolean; brand: string }[]> }).days;
-const nov21 = days['2026-11-21'] ?? [];
+const nov21 = days['2026-11-02'] ?? [];
 
 describe('konbini', () => {
   it('normalizes brands', () => {
@@ -13,8 +13,8 @@ describe('konbini', () => {
     expect(brandOf({ name: 'Some shop' })).toBe('Other');
   });
 
-  // AC §6.12. Skipped only until `npm run build-konbini` has filled Nov 21.
-  it.skipIf(!nov21.length)('Nov 21 lists stores near Kinkaku-ji, Nara Park and the Kyoto hotel', () => {
+  // AC §6.12. Skipped only until `npm run build-konbini` has filled Nov 2.
+  it.skipIf(!nov21.length)('Nov 2 lists stores near Kinkaku-ji, Nara Park and the Kyoto hotel', () => {
     const near = (lat: number, lng: number, m = 700) => nov21.some((k) => distM(k, { lat, lng }) <= m);
     expect(nov21.some((k) => k.nearHotel)).toBe(true);
     expect(near(35.0394, 135.7292)).toBe(true);   // Kinkaku-ji
