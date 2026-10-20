@@ -1,3 +1,4 @@
+import { SampleBanner } from './components/SampleNotice';
 import { ShowCardOverlay } from './components/ShowCardOverlay';
 import { StatusPills } from './components/StatusPills';
 import { UpdatePrompt } from './components/UpdatePrompt';
@@ -51,6 +52,7 @@ export function App() {
   const current = IN_MORE.has(p) ? 'more' : NAV.some((n) => n.path === p) ? p : '';
   return (
     <div class="app">
+      <SampleBanner />
       <main>
         <StatusPills />
         {page}
