@@ -12,6 +12,7 @@ import { jmaAreaForCity, jmaUrl, JMA_MAP_URL, nearestJmaArea, type JmaArea } fro
 import { itineraryDayUrl, stayById, trip, todayState, weatherCities, type TodayState } from '../lib/trip';
 import { cachedWeather, cToF, refreshWeather, type CityWeather } from '../lib/weather';
 import { stamp } from '../lib/now';
+import { SampleHotelNote } from '../components/SampleNotice';
 import { Tiles } from '../components/Tiles';
 import { UnclaimedNotice } from '../components/UnclaimedNotice';
 
@@ -203,6 +204,7 @@ function HotelCompact({ s, label, secondary }: { s: Stay; label: string; seconda
   return (
     <button class={'card card-btn hotel-compact' + (secondary ? ' secondary' : '')} onClick={() => showCard(hotelCard(s))} data-testid={`hotel-${s.id}`}>
       <div class="small muted">{label}</div>
+      <SampleHotelNote />
       <div class="ja" lang="ja">{s.nameJa}</div>
       <div class="small" lang="ja">{s.addrJa}</div>
       <div class="small faint">{s.name} · ☎ {telDisplay(s.tel)} · Tap for the taxi card</div>

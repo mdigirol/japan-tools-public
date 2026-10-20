@@ -2,6 +2,7 @@ import { useState } from 'preact/hooks';
 import type { ShowCard } from '../data/schema';
 import { LOST_ITEMS, showCards } from '../data/showCards';
 import { Dot } from '../components/Dot';
+import { SampleHotelNote } from '../components/SampleNotice';
 import { hotelCard } from '../lib/hotelCard';
 import { now } from '../lib/now';
 import { showCard, telDisplay } from '../lib/showcard';
@@ -20,6 +21,7 @@ export function Cards() {
       <h1>Show cards</h1>
       <p class="small muted">Tap a card to show it full screen. The screen stays awake while it’s open.</p>
       <h2>Taxi: hotels</h2>
+      <SampleHotelNote />
       {trip.stays.map((s) => (
         <button class={'card card-btn hotel-compact' + (s.id === tonight ? '' : ' secondary')} key={s.id} onClick={() => showCard(hotelCard(s))} data-testid={`card-hotel-${s.id}`}>
           <div class="small muted">{fmtRange(s.from, s.to)}{s.id === tonight ? ' · tonight' : ''}</div>

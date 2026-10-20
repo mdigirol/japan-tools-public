@@ -1,7 +1,7 @@
 // The one full-screen show card, opened from anywhere.
 import { useEffect, useState } from 'preact/hooks';
 
-export interface ShowCardView { head?: string; ja: string; en: string; romaji?: string; tel?: string; telLabel?: string; sub?: string }
+export interface ShowCardView { head?: string; ja: string; en: string; romaji?: string; tel?: string; telLabel?: string; sub?: string; hotel?: boolean }
 
 let open: ShowCardView | null = null;
 const subs = new Set<(v: ShowCardView | null) => void>();
