@@ -23,8 +23,9 @@ describe('JMA area links', () => {
   it('picks the area from the day’s own stops, per city', () => {
     const d15 = dayByDate('2026-10-26')!;   // Meiji Jingu → Harajuku → Shibuya
     expect(jmaAreaForCity(cityCoords.tokyo, d15).city).toBe('tokyo');
-    const d25 = dayByDate('2026-11-07')!;   // DisneySea
-    expect(jmaAreaForCity(cityCoords.tokyo, d25).name).toBe('Urayasu City');
+    expect(jmaAreaForCity(cityCoords.tokyo, { ...d15, points: [{ lat: 35.6267, lng: 139.8851 }] }).name).toBe('Urayasu City');   // DisneySea
+    const d14 = dayByDate('2026-11-03')!;   // Osaka → Nakatsugawa
+    expect(jmaAreaForCity(cityCoords.kiso, d14).name).toBe('Nakatsugawa City');
   });
   it('gives every weather city on every day an area in that city', () => {
     for (const d of trip.days) {

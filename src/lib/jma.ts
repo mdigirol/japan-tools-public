@@ -37,12 +37,14 @@ export const JMA_AREAS: JmaArea[] = [
   { code: '2610000', name: 'Kyoto City', city: 'kyoto', lat: 35.0116, lng: 135.7681 },
   { code: '2710000', name: 'Osaka City', city: 'osaka', lat: 34.6937, lng: 135.5023 },
   { code: '2920101', name: 'Western Nara City', city: 'nara', lat: 34.6800, lng: 135.8050 },
-  { code: '2920102', name: 'Eastern Nara City', city: 'nara', lat: 34.6500, lng: 135.9500 }
+  { code: '2920102', name: 'Eastern Nara City', city: 'nara', lat: 34.6500, lng: 135.9500 },
+  { code: '2120600', name: 'Nakatsugawa City', city: 'kiso', lat: 35.4876, lng: 137.5003 },
+  { code: '2042300', name: 'Nagiso Town', city: 'kiso', lat: 35.6033, lng: 137.6081 }
 ];
 
 // Used when no itinerary point falls in the city.
 const CITY_DEFAULT: Record<string, string> = {
-  tokyo: '1310100', hakone: '1438200', kyoto: '2610000', osaka: '2710000', nara: '2920101'
+  tokyo: '1310100', hakone: '1438200', kyoto: '2610000', osaka: '2710000', nara: '2920101', kiso: '2042300'
 };
 
 const MAX_KM = 12;

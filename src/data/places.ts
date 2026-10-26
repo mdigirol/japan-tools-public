@@ -25,6 +25,7 @@ export const areaTips: AreaTip[] = [
   a('kappabashi', 'Kappabashi', 'tokyo', ['N', 'V'], 'Kitchenware street. The knife words are under Shopping.', 'Many shops close Sundays.', 'Knives are tax-free eligible at ¥5,000 or more at one shop.'),
   a('maihama', 'Maihama / DisneySea', 'maihama', ['T', 'V'], 'Use the Tokyo Disney Resort app for Premier Access and mobile ordering.', 'English is widely spoken.'),
   a('meiji-jingu', 'Meiji Jingu and Yoyogi', 'tokyo', ['T', 'V'], 'A Shinto shrine: wash at the basin, then two bows, two claps, one bow.', "Weddings are common. Don't photograph the party up close."),
+  a('akasaka', 'Akasaka', 'tokyo', ['I', 'V'], "Hie Shrine's back stairs climb through a tunnel of red torii.", 'Many small restaurants serve set lunches on weekdays.'),
   a('haneda', 'Haneda', 'tokyo', ['N', 'V'], 'Leave extra time at customs, before check-in, to claim the tax-free refund.'),
   // Hakone
   a('hakone', 'Tonosawa / Hakone-Yumoto', 'hakone', ['N', 'I'], 'Shops along the river close around 5:30–6 PM.', 'Relatively tattoo-friendly. Private baths are easy to find.'),
@@ -41,8 +42,15 @@ export const areaTips: AreaTip[] = [
   a('namba', 'Namba and Dotonbori', 'osaka', ['N', 'V'], 'Osaka custom is to stand on the right. Hold the handrail and don’t walk.', 'Kushikatsu shops share one sauce pot: dip once, never twice.', 'Takoyaki is molten inside. Let it cool.', 'Ura-Namba is a maze of standing bars (tachinomi).'),
   a('shinsaibashi', 'Amerikamura and Shinsaibashi', 'osaka', ['N', 'T'], 'Youth fashion and vintage. Busy, so watch your bag.'),
   a('umeda', 'Umeda', 'osaka', ['I', 'V'], 'Huge underground maze. Use exit numbers.'),
+  a('osaka-castle', 'Osaka Castle', 'osaka', ['I', 'V'], 'The park is free. The keep charges entry and is a modern museum inside.', 'Go early. Lines for the keep grow by late morning.'),
+  a('shinsekai', 'Shinsekai', 'osaka', ['I', 'V'], 'Kushikatsu home turf. Same rule: dip once in the shared sauce.', 'Tsutenkaku tower has an observation deck.'),
   // Nara
-  a('nara', 'Nara Park', 'nara', ['N', 'V'], 'The deer bow for shika senbei crackers, but they nip and head-butt.', 'Feed quickly, then show empty palms. Don’t tease them with food.', 'Try kaki-no-ha-zushi: sushi wrapped in persimmon leaves.')
+  a('nara', 'Nara Park', 'nara', ['N', 'V'], 'The deer bow for shika senbei crackers, but they nip and head-butt.', 'Feed quickly, then show empty palms. Don’t tease them with food.', 'Try kaki-no-ha-zushi: sushi wrapped in persimmon leaves.'),
+  // Kiso Valley (Nakasendo)
+  a('nakatsugawa', 'Nakatsugawa', 'kiso', ['I', 'V'], 'Buses to Magome leave from outside Nakatsugawa Station.', 'Autumn is chestnut season. Try kuri-kinton, the local chestnut sweet.'),
+  a('magome', 'Magome', 'kiso', ['I', 'V'], 'The lanes are steep and stone-paved. Wear walking shoes.', 'Shops close early, around 5 PM.'),
+  a('magome-tsumago', 'Magome to Tsumago walk', 'kiso', ['I', 'V'], 'Allow about three hours. After the pass, it is mostly downhill to Tsumago.', 'Bears live here. Ring the bells hung along the trail.', 'In season, the tourist offices forward bags between the two towns. Drop them off in the morning.'),
+  a('tsumago', 'Tsumago', 'kiso', ['I', 'V'], 'Most shops close around 5 PM and the town goes quiet.', 'Ō-tsumago, a short walk south, is a quieter hamlet of old inns.')
 ];
 
 export const tipsBySlug = new Map(areaTips.map((t) => [t.slug, t]));

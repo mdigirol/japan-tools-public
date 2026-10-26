@@ -10,7 +10,7 @@ export const DEFAULT_CHECKIN = '15:00';
 // Optional: set VITE_ITINERARY_URL at build time to show an "Open this day in the itinerary" link on Today.
 export const ITINERARY_URL: string = import.meta.env.VITE_ITINERARY_URL ?? '';
 
-export const SEG_CITY: Record<TripDay['seg'], string> = { air: 'In transit', t1: 'Tokyo', hk: 'Hakone', ky: 'Kyoto', t2: 'Tokyo' };
+export const SEG_CITY: Record<TripDay['seg'], string> = { air: 'In transit', t1: 'Tokyo', hk: 'Hakone', ky: 'Kyoto', os: 'Osaka', ks: 'Kiso Valley', t2: 'Tokyo' };
 
 export const stayById = (id?: string): Stay | undefined => trip.stays.find((s) => s.id === id);
 export const dayByDate = (ymd: string): TripDay | undefined => trip.days.find((d) => d.date === ymd);
@@ -68,9 +68,10 @@ const CITY_COORDS: Record<string, City> = {
   hakone: { id: 'hakone', name: 'Hakone', lat: 35.2338, lng: 139.0890 },
   kyoto: { id: 'kyoto', name: 'Kyoto', lat: 35.0091, lng: 135.7633 },
   osaka: { id: 'osaka', name: 'Osaka', lat: 34.6687, lng: 135.5013 },
-  nara: { id: 'nara', name: 'Nara', lat: 34.6851, lng: 135.8430 }
+  nara: { id: 'nara', name: 'Nara', lat: 34.6851, lng: 135.8430 },
+  kiso: { id: 'kiso', name: 'Kiso Valley', lat: 35.5766, lng: 137.5958 }
 };
-const SEG_PLACE: Record<string, Place> = { t1: 'tokyo', t2: 'tokyo', hk: 'hakone', ky: 'kyoto' };
+const SEG_PLACE: Record<string, Place> = { t1: 'tokyo', t2: 'tokyo', hk: 'hakone', ky: 'kyoto', os: 'osaka', ks: 'kiso' };
 
 export function weatherCities(day?: TripDay): City[] {
   if (!day || day.seg === 'air') return [CITY_COORDS.tokyo];

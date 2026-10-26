@@ -23,6 +23,7 @@ Keys match how the itinerary names areas, so Today can match a day's `HOODS` ent
 - **Kappabashi (`kappabashi`)** · Kitchenware street, so see the knife words in `money-and-shopping.md`. Many shops close Sundays. Knives are tax-free eligible if you spend ¥5,000 or more at one shop. [N][V]
 - **Maihama / DisneySea (`maihama`)** · Book date tickets and use the Tokyo Disney Resort app for Premier Access and mobile ordering. English is widely spoken. [T][V]
 - **Meiji Jingu and Yoyogi (`meiji-jingu`)** · Shinto shrine, so wash at the basin and follow the two-bow, two-clap, one-bow rule. Weddings are common; don't photograph the party up close. [T][V]
+- **Akasaka (`akasaka`)** · Hie Shrine's back stairs climb through a tunnel of red torii. Many small restaurants serve set lunches on weekdays. [I][V]
 - **Haneda (`haneda`)** · Nov 10: leave extra time at customs, before check-in, to claim the tax-free refund. See the tax-free claim log. [N][V]
 
 ## Hakone
@@ -47,7 +48,16 @@ Kyoto as a whole: carry more cash than in Tokyo. Many temples, small restaurants
 - **Namba and Dotonbori (`namba`)** · Osaka custom is to stand on the right; hold the handrail and don't walk. Kushikatsu shops share one dipping-sauce pot, so dip once and never twice. Takoyaki is molten inside; let it cool. Ura-Namba is a maze of standing bars (tachinomi). [N][V]
 - **Amerikamura and Shinsaibashi (`shinsaibashi`)** · Youth fashion and vintage. Busy, so watch your bag. [N][T]
 - **Umeda (`umeda`)** · Huge underground maze. Use exit numbers. [I][V]
+- **Osaka Castle (`osaka-castle`)** · The park is free; the keep charges entry and is a modern museum inside. Go early, since lines for the keep grow by late morning. [I][V]
+- **Shinsekai (`shinsekai`)** · Kushikatsu home turf, so the same rule applies: dip once in the shared sauce. Tsutenkaku tower has an observation deck. [I][V]
 
 ## Nara
 
 - **Nara Park (`nara`)** · The deer bow for shika senbei crackers sold in the park, but they nip and head-butt. Feed quickly, then show empty palms. Don't tease them with food. Try kaki-no-ha-zushi, sushi wrapped in persimmon leaves. [N][V]
+
+## Kiso Valley (Nakasendo)
+
+- **Nakatsugawa (`nakatsugawa`)** · Buses to Magome leave from outside Nakatsugawa Station. Autumn is chestnut season; try kuri-kinton, the local chestnut sweet. [I][V]
+- **Magome (`magome`)** · The lanes are steep and stone-paved, so wear walking shoes. Shops close early, around 5 PM. [I][V]
+- **Magome to Tsumago walk (`magome-tsumago`)** · Allow about three hours; after the pass it is mostly downhill to Tsumago. Bears live here, so ring the bells hung along the trail. In season, the tourist offices forward bags between the two towns; drop them off in the morning. [I][V]
+- **Tsumago (`tsumago`)** · Most shops close around 5 PM and the town goes quiet. Ō-tsumago, a short walk south, is a quieter hamlet of old inns. [I][V]

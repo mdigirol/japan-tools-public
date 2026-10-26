@@ -1,5 +1,4 @@
 import { useEffect } from 'preact/hooks';
-import { SampleHotelNote } from './SampleNotice';
 import { showCard, telHref, useShowCard } from '../lib/showcard';
 
 // Keep the screen awake while a card is open (Screen Wake Lock API, where supported).
@@ -45,7 +44,7 @@ export function ShowCardOverlay() {
         {v.sub && <div class="sc-head" style="font-size:max(22px,5vw)">{v.sub}</div>}
         {v.tel && <a class="sc-tel" href={telHref(v.tel)}>☎ {v.telLabel ?? v.tel}</a>}
       </div>
-      <div class="sc-en" lang="en">{v.en}{v.romaji ? <><br /><i data-testid="sc-romaji">{v.romaji}</i></> : null}{v.hotel && <SampleHotelNote card />}</div>
+      <div class="sc-en" lang="en">{v.en}{v.romaji ? <><br /><i data-testid="sc-romaji">{v.romaji}</i></> : null}</div>
     </div>
   );
 }
