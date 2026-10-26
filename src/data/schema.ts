@@ -2,7 +2,7 @@
 import { z } from 'zod';
 
 export const SOURCES = ['N', 'K', 'T', 'I', 'V', 'JNTO'] as const;
-export const PLACES = ['tokyo', 'hakone', 'kyoto', 'osaka', 'nara', 'maihama', 'anywhere'] as const;
+export const PLACES = ['tokyo', 'hakone', 'kyoto', 'osaka', 'nara', 'kiso', 'maihama', 'anywhere'] as const;
 export const VENUES = ['sushi-counter', 'izakaya', 'yakitori', 'ramen', 'restaurant', 'cafe', 'cocktail-bar', 'ryokan',
   'onsen', 'temple', 'shrine', 'department-store', 'shop', 'konbini', 'train', 'shinkansen', 'taxi', 'theme-park',
   'market', 'pharmacy'] as const;
@@ -93,7 +93,7 @@ export const Stay = z.strictObject({
 export type Stay = z.infer<typeof Stay>;
 
 export const TripDay = z.strictObject({
-  date: ymd, dow: z.string().length(3), seg: z.enum(['air', 't1', 'hk', 'ky', 't2']),
+  date: ymd, dow: z.string().length(3), seg: z.enum(['air', 't1', 'hk', 'ky', 'os', 'ks', 't2']),
   places: z.array(Place), area: z.string(),
   hoods: z.array(z.strictObject({ name: z.string(), blurb: z.string(), slug: z.string() })),
   venues: z.array(Venue),

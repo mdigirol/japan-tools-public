@@ -3,7 +3,7 @@ import type { Stay } from '../data/schema';
 import { etiquette, ETIQUETTE_GROUPS } from '../data/etiquette';
 import { phrases, PHRASE_TABS } from '../data/phrases';
 import { KYOTO_GENERAL, tipsBySlug } from '../data/places';
-import { longDate, now } from '../lib/now';
+import { dateRange, longDate, now } from '../lib/now';
 import { href } from '../lib/router';
 import { useSettings } from '../lib/settings';
 import { showCard, telDisplay } from '../lib/showcard';
@@ -12,7 +12,6 @@ import { jmaAreaForCity, jmaUrl, JMA_MAP_URL, nearestJmaArea, type JmaArea } fro
 import { itineraryDayUrl, stayById, trip, todayState, weatherCities, type TodayState } from '../lib/trip';
 import { cachedWeather, cToF, refreshWeather, type CityWeather } from '../lib/weather';
 import { stamp } from '../lib/now';
-import { SampleHotelNote } from '../components/SampleNotice';
 import { Tiles } from '../components/Tiles';
 import { UnclaimedNotice } from '../components/UnclaimedNotice';
 
@@ -204,7 +203,6 @@ function HotelCompact({ s, label, secondary }: { s: Stay; label: string; seconda
   return (
     <button class={'card card-btn hotel-compact' + (secondary ? ' secondary' : '')} onClick={() => showCard(hotelCard(s))} data-testid={`hotel-${s.id}`}>
       <div class="small muted">{label}</div>
-      <SampleHotelNote />
       <div class="ja" lang="ja">{s.nameJa}</div>
       <div class="small" lang="ja">{s.addrJa}</div>
       <div class="small faint">{s.name} · ☎ {telDisplay(s.tel)} · Tap for the taxi card</div>
@@ -215,7 +213,7 @@ function HotelCompact({ s, label, secondary }: { s: Stay; label: string; seconda
 function Hotels({ st }: { st: TodayState }) {
   if (st.phase === 'before' || st.phase === 'air-out') {
     const first = stayById(trip.stays[0]?.id);
-    return first ? <section><h2>First hotel</h2><HotelCompact s={first} label="Oct 23–29" /></section> : null;
+    return first ? <section><h2>First hotel</h2><HotelCompact s={first} label={dateRange(first.from, first.to)} /></section> : null;
   }
   if (!st.primary) return null;
   if (st.flightHome) {

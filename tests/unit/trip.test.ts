@@ -55,10 +55,10 @@ describe.each(datasets)('trip.json ($label)', ({ path }) => {
 describe('sample trip.json', () => {
   const trip = JSON.parse(readFileSync(dataFile('trip.json', 'sample'), 'utf8'));
 
-  it('has 20 days, Oct 22–Nov 10, and four stays', () => {
+  it('has 20 days, Oct 22–Nov 10, and seven stays', () => {
     expect(trip.days).toHaveLength(20);
     expect(trip.days[0].date).toBe('2026-10-22');
     expect(trip.days[19].date).toBe('2026-11-10');
-    expect(trip.stays.map((s: { id: string }) => s.id)).toEqual(['tokyo-1', 'hakone', 'kyoto', 'tokyo-2']);
+    expect(trip.stays.map((s: { id: string }) => s.id)).toEqual(['akasaka', 'gora', 'kyoto', 'osaka', 'nakatsugawa', 'tsumago', 'asakusa']);
   });
 });

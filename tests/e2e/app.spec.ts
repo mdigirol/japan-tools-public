@@ -21,7 +21,7 @@ test('cold start offline after one online load', async ({ page, context }) => {
   await expect.poll(() => page.evaluate(() => !!navigator.serviceWorker.controller)).toBe(true);
   await context.setOffline(true);
   await page.reload();
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Mon, Nov 2 · Kyoto');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Mon, Nov 2 · Osaka');
   await expect(page.getByText('Offline', { exact: true })).toBeVisible();
   for (const [hash, h1] of [['#/phrases', 'Phrases'], ['#/cards', 'Show cards'], ['#/etiquette', 'Etiquette'], ['#/currency', 'Currency'], ['#/emergency', 'Emergency']]) {
     await page.goto(at('2026-11-02T08:00+09:00', hash));
@@ -33,7 +33,7 @@ test('cold start offline after one online load', async ({ page, context }) => {
 test('each MVP route renders', async ({ page }) => {
   const errors: string[] = [];
   page.on('pageerror', (e) => errors.push(e.message));
-  for (const [hash, h1] of [['', 'Mon, Nov 2 · Kyoto'], ['#/phrases', 'Phrases'], ['#/cards', 'Show cards'], ['#/etiquette', 'Etiquette'],
+  for (const [hash, h1] of [['', 'Mon, Nov 2 · Osaka'], ['#/phrases', 'Phrases'], ['#/cards', 'Show cards'], ['#/etiquette', 'Etiquette'],
     ['#/currency', 'Currency'], ['#/emergency', 'Emergency'], ['#/more', 'More'], ['#/settings', 'Settings'], ['#/shopping', 'Shopping & tax-free'], ['#/purchases', 'Souvenirs & tax-free'],
     ['#/konbini', 'Konbini'], ['#/decoder', 'Signs & menus'], ['#/transit', 'Transit'], ['#/numbers', 'Numbers']]) {
     await page.goto(at('2026-11-02T08:00+09:00', hash));
@@ -43,12 +43,13 @@ test('each MVP route renders', async ({ page }) => {
 });
 
 const scenarios: [string, string, string, string[], string?][] = [
-  ['2026-10-23T18:00+09:00', 'Fri, Oct 23 · Tokyo', 'tokyo-1', ['Shinjuku']],
-  ['2026-10-29T10:00+09:00', 'Thu, Oct 29 · Hakone', 'hakone', ['Hakone'], 'tokyo-1'],
-  ['2026-10-29T16:00+09:00', 'Thu, Oct 29 · Hakone', 'hakone', ['Hakone']],
-  ['2026-11-01T09:00+09:00', 'Sun, Nov 1 · Kyoto', 'kyoto', ['Fushimi Inari', 'Namba and Dotonbori']],
-  ['2026-11-07T12:00+09:00', 'Sat, Nov 7 · Tokyo', 'tokyo-2', ['Maihama (Tokyo Bay)']],
-  ['2026-11-10T08:00+09:00', 'Tue, Nov 10 · Tokyo', 'tokyo-2', ['Kappabashi']]
+  ['2026-10-23T18:00+09:00', 'Fri, Oct 23 · Tokyo', 'akasaka', ['Akasaka']],
+  ['2026-10-27T10:00+09:00', 'Tue, Oct 27 · Hakone', 'gora', ['Hakone'], 'akasaka'],
+  ['2026-10-27T16:00+09:00', 'Tue, Oct 27 · Hakone', 'gora', ['Hakone']],
+  ['2026-11-01T09:00+09:00', 'Sun, Nov 1 · Osaka', 'osaka', ['Nara Park']],
+  ['2026-11-04T12:00+09:00', 'Wed, Nov 4 · Kiso Valley', 'tsumago', ['Magome to Tsumago walk'], 'nakatsugawa'],
+  ['2026-11-07T12:00+09:00', 'Sat, Nov 7 · Tokyo', 'asakusa', ['Jimbocho', 'Hama-rikyu Gardens']],
+  ['2026-11-10T08:00+09:00', 'Tue, Nov 10 · Tokyo', 'asakusa', ['Kappabashi']]
 ];
 
 for (const [when, h1, hotel, hoods, checkingOut] of scenarios) {

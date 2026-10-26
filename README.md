@@ -2,7 +2,7 @@
 
 A phone-first, offline web app for a trip to Japan: what to say, do, or pay, right now.
 
-This is a public copy for testing. The itinerary in `data/sample/trip.json` is a **sample** 20-day trip (Tokyo → Hakone → Kyoto → Tokyo, Oct 22–Nov 10, 2026). The four hotels are well-known hotels used as placeholders, not real bookings.
+This is a public copy for testing. The itinerary in `data/sample/trip.json` is a 20-day prototype trip for friends (Tokyo → Hakone → Kyoto → Osaka → Kiso Valley → Tokyo, Oct 22–Nov 10, 2026), with its seven real hotels. Day plans are suggestions.
 
 ## Try it
 

@@ -1,54 +1,93 @@
 {
-  "generatedAt": "2026-10-19T00:00:00.000Z",
+  "generatedAt": "2026-10-26T00:00:00.000Z",
   "stays": [
     {
-      "id": "tokyo-1",
-      "name": "Park Hyatt Tokyo",
-      "nameJa": "パーク ハイアット 東京",
-      "addrEn": "3-7-1-2 Nishi-Shinjuku, Shinjuku-ku, Tokyo 163-1055",
-      "addrJa": "〒163-1055 東京都新宿区西新宿3-7-1-2",
-      "tel": "+81 3-5322-1234",
-      "lat": 35.6856,
-      "lng": 139.6909,
+      "id": "akasaka",
+      "name": "Hotel Hillarys Akasaka",
+      "nameJa": "ホテルヒラリーズ赤坂",
+      "addrEn": "3-12-5 Akasaka, Minato-ku, Tokyo 107-0052",
+      "addrJa": "〒107-0052 東京都港区赤坂3-12-5",
+      "tel": "+81 3-3582-1050",
+      "lat": 35.6737,
+      "lng": 139.7378,
       "from": "2026-10-23",
-      "to": "2026-10-29",
+      "to": "2026-10-27",
       "checkIn": "15:00"
     },
     {
-      "id": "hakone",
-      "name": "Fujiya Hotel",
-      "nameJa": "富士屋ホテル",
-      "addrEn": "359 Miyanoshita, Hakone-machi, Ashigarashimo-gun, Kanagawa 250-0404",
-      "addrJa": "〒250-0404 神奈川県足柄下郡箱根町宮ノ下359",
-      "tel": "+81 460-82-2211",
-      "lat": 35.2436,
-      "lng": 139.0698,
-      "from": "2026-10-29",
-      "to": "2026-10-31",
+      "id": "gora",
+      "name": "Gora Hanaougi",
+      "nameJa": "強羅花扇",
+      "addrEn": "1300-681 Gora, Hakone-machi, Ashigarashimo-gun, Kanagawa 250-0408",
+      "addrJa": "〒250-0408 神奈川県足柄下郡箱根町強羅1300-681",
+      "tel": "+81 460-87-7715",
+      "lat": 35.246,
+      "lng": 139.037,
+      "from": "2026-10-27",
+      "to": "2026-10-28",
       "checkIn": "15:00"
     },
     {
       "id": "kyoto",
-      "name": "Hotel Granvia Kyoto",
-      "nameJa": "ホテルグランヴィア京都",
-      "addrEn": "JR Kyoto Station, Karasuma-dori Shiokoji-sagaru, Shimogyo-ku, Kyoto 600-8216",
-      "addrJa": "〒600-8216 京都市下京区烏丸通塩小路下ル JR京都駅中央口",
-      "tel": "+81 75-344-8888",
-      "lat": 34.9858,
-      "lng": 135.7588,
+      "name": "The Machiya Ebisuya",
+      "nameJa": "ザ・町家えびすや",
+      "addrEn": "192-1 Ebisuya-cho, Shimogyo-ku, Kyoto 600-8062",
+      "addrJa": "〒600-8062 京都府京都市下京区恵美須屋町192-1",
+      "tel": "+81 75-365-2333",
+      "lat": 34.9994,
+      "lng": 135.7647,
+      "from": "2026-10-28",
+      "to": "2026-10-31",
+      "checkIn": "15:00"
+    },
+    {
+      "id": "osaka",
+      "name": "Fairfield by Marriott Osaka Namba",
+      "nameJa": "フェアフィールド・バイ・マリオット大阪難波",
+      "addrEn": "2-3-25 Motomachi, Naniwa-ku, Osaka 556-0016",
+      "addrJa": "〒556-0016 大阪府大阪市浪速区元町2-3-25",
+      "tel": "+81 6-6649-4111",
+      "lat": 34.6625,
+      "lng": 135.4962,
       "from": "2026-10-31",
+      "to": "2026-11-03",
+      "checkIn": "15:00"
+    },
+    {
+      "id": "nakatsugawa",
+      "name": "Yogarasu Sanso Nagataki",
+      "nameJa": "夜がらす山荘 長多喜",
+      "addrEn": "1649 Komanba, Nakatsugawa, Gifu 508-0011",
+      "addrJa": "〒508-0011 岐阜県中津川市駒場1649",
+      "tel": "+81 573-65-3133",
+      "lat": 35.5063,
+      "lng": 137.4888,
+      "from": "2026-11-03",
+      "to": "2026-11-04",
+      "checkIn": "15:00"
+    },
+    {
+      "id": "tsumago",
+      "name": "Minshuku Koshinzuka",
+      "nameJa": "民宿 こおしんづか",
+      "addrEn": "1775 Azuma, Nagiso-machi, Kiso-gun, Nagano 399-5302",
+      "addrJa": "〒399-5302 長野県木曽郡南木曽町吾妻1775",
+      "tel": "+81 264-57-3029",
+      "lat": 35.5648,
+      "lng": 137.5928,
+      "from": "2026-11-04",
       "to": "2026-11-05",
       "checkIn": "15:00"
     },
     {
-      "id": "tokyo-2",
-      "name": "Imperial Hotel Tokyo",
-      "nameJa": "帝国ホテル東京",
-      "addrEn": "1-1-1 Uchisaiwaicho, Chiyoda-ku, Tokyo 100-8558",
-      "addrJa": "〒100-8558 東京都千代田区内幸町1-1-1",
-      "tel": "+81 3-3504-1111",
-      "lat": 35.6727,
-      "lng": 139.7586,
+      "id": "asakusa",
+      "name": "Onyado Nono Asakusa Annex",
+      "nameJa": "御宿 野乃 浅草別邸",
+      "addrEn": "2-7-26 Asakusa, Taito-ku, Tokyo 111-0032",
+      "addrJa": "〒111-0032 東京都台東区浅草2-7-26",
+      "tel": "+81 3-5830-0130",
+      "lat": 35.7149,
+      "lng": 139.795,
       "from": "2026-11-05",
       "to": "2026-11-10",
       "checkIn": "15:00"
@@ -73,29 +112,29 @@
       "places": [
         "tokyo"
       ],
-      "area": "Haneda → Shinjuku",
+      "area": "Haneda → Akasaka",
       "hoods": [
         {
-          "name": "Shinjuku",
-          "blurb": "Skyscrapers to the west, Omoide Yokocho and Golden Gai's tiny bars to the east of the station.",
-          "slug": "shinjuku"
+          "name": "Akasaka",
+          "blurb": "Office towers and side streets packed with small restaurants and bars. Hie Shrine's red gates climb the hill nearby.",
+          "slug": "akasaka"
         }
       ],
       "venues": [
-        "shop",
+        "shrine",
         "izakaya"
       ],
       "points": [
         {
-          "lat": 35.6938,
-          "lng": 139.7034
+          "lat": 35.6745,
+          "lng": 139.7365
         },
         {
-          "lat": 35.6856,
-          "lng": 139.6909
+          "lat": 35.6737,
+          "lng": 139.7378
         }
       ],
-      "stayTonight": "tokyo-1"
+      "stayTonight": "akasaka"
     },
     {
       "date": "2026-10-24",
@@ -133,59 +172,16 @@
           "lng": 139.765
         },
         {
-          "lat": 35.6856,
-          "lng": 139.6909
+          "lat": 35.6737,
+          "lng": 139.7378
         }
       ],
-      "stayTonight": "tokyo-1",
-      "stayLastNight": "tokyo-1"
+      "stayTonight": "akasaka",
+      "stayLastNight": "akasaka"
     },
     {
       "date": "2026-10-25",
       "dow": "Sun",
-      "seg": "t1",
-      "places": [
-        "tokyo"
-      ],
-      "area": "Asakusa → Yanaka and Nezu",
-      "hoods": [
-        {
-          "name": "Asakusa",
-          "blurb": "Senso-ji temple and the Nakamise shopping street. Busiest from mid-morning.",
-          "slug": "asakusa"
-        },
-        {
-          "name": "Yanaka and Nezu",
-          "blurb": "Old wooden streets, small temples and Nezu Shrine's tunnel of red gates.",
-          "slug": "yanaka-nezu"
-        }
-      ],
-      "venues": [
-        "temple",
-        "shrine",
-        "cafe",
-        "restaurant"
-      ],
-      "points": [
-        {
-          "lat": 35.7148,
-          "lng": 139.7967
-        },
-        {
-          "lat": 35.7225,
-          "lng": 139.766
-        },
-        {
-          "lat": 35.6856,
-          "lng": 139.6909
-        }
-      ],
-      "stayTonight": "tokyo-1",
-      "stayLastNight": "tokyo-1"
-    },
-    {
-      "date": "2026-10-26",
-      "dow": "Mon",
       "seg": "t1",
       "places": [
         "tokyo"
@@ -228,83 +224,65 @@
           "lng": 139.7005
         },
         {
-          "lat": 35.6856,
-          "lng": 139.6909
+          "lat": 35.6737,
+          "lng": 139.7378
         }
       ],
-      "stayTonight": "tokyo-1",
-      "stayLastNight": "tokyo-1"
+      "stayTonight": "akasaka",
+      "stayLastNight": "akasaka"
+    },
+    {
+      "date": "2026-10-26",
+      "dow": "Mon",
+      "seg": "t1",
+      "places": [
+        "tokyo"
+      ],
+      "area": "Shinjuku",
+      "hoods": [
+        {
+          "name": "Shinjuku",
+          "blurb": "Skyscrapers to the west, Omoide Yokocho and Golden Gai's tiny bars to the east of the station.",
+          "slug": "shinjuku"
+        }
+      ],
+      "venues": [
+        "shop",
+        "izakaya",
+        "ramen"
+      ],
+      "points": [
+        {
+          "lat": 35.6938,
+          "lng": 139.7034
+        },
+        {
+          "lat": 35.6737,
+          "lng": 139.7378
+        }
+      ],
+      "stayTonight": "akasaka",
+      "stayLastNight": "akasaka"
     },
     {
       "date": "2026-10-27",
       "dow": "Tue",
-      "seg": "t1",
-      "places": [
-        "tokyo"
-      ],
-      "area": "Kichijoji → Shimokitazawa",
-      "hoods": [
-        {
-          "name": "Kichijoji",
-          "blurb": "Inokashira Park, shopping arcades and the Harmonica Yokocho alleys.",
-          "slug": "kichijoji"
-        },
-        {
-          "name": "Shimokitazawa",
-          "blurb": "Vintage clothing, record shops, cafes and small live-music venues.",
-          "slug": "shimokitazawa"
-        }
-      ],
-      "venues": [
-        "cafe",
-        "shop",
-        "izakaya"
-      ],
-      "points": [
-        {
-          "lat": 35.7033,
-          "lng": 139.5797
-        },
-        {
-          "lat": 35.6614,
-          "lng": 139.668
-        },
-        {
-          "lat": 35.6856,
-          "lng": 139.6909
-        }
-      ],
-      "stayTonight": "tokyo-1",
-      "stayLastNight": "tokyo-1"
-    },
-    {
-      "date": "2026-10-28",
-      "dow": "Wed",
-      "seg": "t1",
-      "places": [
-        "tokyo"
-      ],
-      "area": "Free day in Tokyo",
-      "hoods": [],
-      "venues": [],
-      "points": [],
-      "stayTonight": "tokyo-1",
-      "stayLastNight": "tokyo-1"
-    },
-    {
-      "date": "2026-10-29",
-      "dow": "Thu",
       "seg": "hk",
       "places": [
         "hakone",
         "tokyo"
       ],
-      "area": "Tokyo → Hakone",
+      "area": "Tokyo → Hakone (Gora)",
       "hoods": [
         {
           "name": "Hakone",
           "blurb": "Hot-spring towns in the mountains, linked by a switchback railway, cable car and ropeway.",
           "slug": "hakone"
+        },
+        {
+          "name": "Lake Ashi loop",
+          "blurb": "Ropeway over Owakudani's steam vents, then a boat across Lake Ashi.",
+          "slug": "hakone-upper"
         }
       ],
       "venues": [
@@ -314,53 +292,24 @@
       ],
       "points": [
         {
-          "lat": 35.2436,
-          "lng": 139.0698
+          "lat": 35.2466,
+          "lng": 139.047
         },
-        {
-          "lat": 35.2436,
-          "lng": 139.0698
-        }
-      ],
-      "stayTonight": "hakone",
-      "stayLastNight": "tokyo-1"
-    },
-    {
-      "date": "2026-10-30",
-      "dow": "Fri",
-      "seg": "hk",
-      "places": [
-        "hakone"
-      ],
-      "area": "Lake Ashi loop",
-      "hoods": [
-        {
-          "name": "Lake Ashi loop",
-          "blurb": "Ropeway over Owakudani's steam vents, then a boat across Lake Ashi.",
-          "slug": "hakone-upper"
-        }
-      ],
-      "venues": [
-        "train",
-        "shrine",
-        "onsen"
-      ],
-      "points": [
         {
           "lat": 35.2044,
           "lng": 139.0247
         },
         {
-          "lat": 35.2436,
-          "lng": 139.0698
+          "lat": 35.246,
+          "lng": 139.037
         }
       ],
-      "stayTonight": "hakone",
-      "stayLastNight": "hakone"
+      "stayTonight": "gora",
+      "stayLastNight": "akasaka"
     },
     {
-      "date": "2026-10-31",
-      "dow": "Sat",
+      "date": "2026-10-28",
+      "dow": "Wed",
       "seg": "ky",
       "places": [
         "kyoto",
@@ -394,22 +343,21 @@
           "lng": 135.775
         },
         {
-          "lat": 34.9858,
-          "lng": 135.7588
+          "lat": 34.9994,
+          "lng": 135.7647
         }
       ],
       "stayTonight": "kyoto",
-      "stayLastNight": "hakone"
+      "stayLastNight": "gora"
     },
     {
-      "date": "2026-11-01",
-      "dow": "Sun",
+      "date": "2026-10-29",
+      "dow": "Thu",
       "seg": "ky",
       "places": [
-        "kyoto",
-        "osaka"
+        "kyoto"
       ],
-      "area": "Fushimi Inari → Osaka",
+      "area": "Fushimi Inari → Higashiyama",
       "hoods": [
         {
           "name": "Fushimi Inari",
@@ -417,16 +365,16 @@
           "slug": "fushimi"
         },
         {
-          "name": "Namba and Dotonbori",
-          "blurb": "Osaka's neon canal district, full of street food.",
-          "slug": "namba"
+          "name": "Higashiyama",
+          "blurb": "Sloping lanes of shops leading up to Kiyomizu-dera.",
+          "slug": "higashiyama"
         }
       ],
       "venues": [
         "shrine",
+        "temple",
         "train",
-        "restaurant",
-        "izakaya"
+        "restaurant"
       ],
       "points": [
         {
@@ -434,68 +382,25 @@
           "lng": 135.7727
         },
         {
-          "lat": 34.6687,
-          "lng": 135.5013
+          "lat": 34.9949,
+          "lng": 135.785
         },
         {
-          "lat": 34.9858,
-          "lng": 135.7588
+          "lat": 34.9994,
+          "lng": 135.7647
         }
       ],
       "stayTonight": "kyoto",
       "stayLastNight": "kyoto"
     },
     {
-      "date": "2026-11-02",
-      "dow": "Mon",
-      "seg": "ky",
-      "places": [
-        "kyoto",
-        "nara"
-      ],
-      "area": "Kinkaku-ji → Nara",
-      "hoods": [
-        {
-          "name": "Kinkaku-ji area",
-          "blurb": "The Golden Pavilion and Ryoan-ji's rock garden in northwest Kyoto.",
-          "slug": "kinugasa"
-        },
-        {
-          "name": "Nara Park",
-          "blurb": "Todai-ji's great Buddha and the park's free-roaming deer.",
-          "slug": "nara"
-        }
-      ],
-      "venues": [
-        "temple",
-        "shrine",
-        "restaurant"
-      ],
-      "points": [
-        {
-          "lat": 35.0394,
-          "lng": 135.7292
-        },
-        {
-          "lat": 34.6851,
-          "lng": 135.843
-        },
-        {
-          "lat": 34.9858,
-          "lng": 135.7588
-        }
-      ],
-      "stayTonight": "kyoto",
-      "stayLastNight": "kyoto"
-    },
-    {
-      "date": "2026-11-03",
-      "dow": "Tue",
+      "date": "2026-10-30",
+      "dow": "Fri",
       "seg": "ky",
       "places": [
         "kyoto"
       ],
-      "area": "Arashiyama → Higashiyama",
+      "area": "Arashiyama → Kinkaku-ji",
       "hoods": [
         {
           "name": "Arashiyama",
@@ -503,9 +408,9 @@
           "slug": "arashiyama"
         },
         {
-          "name": "Higashiyama",
-          "blurb": "Sloping lanes of shops leading up to Kiyomizu-dera.",
-          "slug": "higashiyama"
+          "name": "Kinkaku-ji area",
+          "blurb": "The Golden Pavilion and Ryoan-ji's rock garden in northwest Kyoto.",
+          "slug": "kinugasa"
         }
       ],
       "venues": [
@@ -519,30 +424,212 @@
           "lng": 135.6668
         },
         {
-          "lat": 34.9949,
-          "lng": 135.785
+          "lat": 35.0394,
+          "lng": 135.7292
         },
         {
-          "lat": 34.9858,
-          "lng": 135.7588
+          "lat": 34.9994,
+          "lng": 135.7647
         }
       ],
       "stayTonight": "kyoto",
       "stayLastNight": "kyoto"
     },
     {
-      "date": "2026-11-04",
-      "dow": "Wed",
-      "seg": "ky",
+      "date": "2026-10-31",
+      "dow": "Sat",
+      "seg": "os",
       "places": [
+        "osaka",
         "kyoto"
       ],
-      "area": "Free day in Kyoto",
-      "hoods": [],
-      "venues": [],
-      "points": [],
-      "stayTonight": "kyoto",
+      "area": "Kyoto → Osaka · Namba and Dotonbori",
+      "hoods": [
+        {
+          "name": "Namba and Dotonbori",
+          "blurb": "Osaka's neon canal district, full of street food.",
+          "slug": "namba"
+        }
+      ],
+      "venues": [
+        "train",
+        "restaurant",
+        "izakaya"
+      ],
+      "points": [
+        {
+          "lat": 34.6687,
+          "lng": 135.5013
+        },
+        {
+          "lat": 34.6625,
+          "lng": 135.4962
+        }
+      ],
+      "stayTonight": "osaka",
       "stayLastNight": "kyoto"
+    },
+    {
+      "date": "2026-11-01",
+      "dow": "Sun",
+      "seg": "os",
+      "places": [
+        "osaka",
+        "nara"
+      ],
+      "area": "Nara day trip",
+      "hoods": [
+        {
+          "name": "Nara Park",
+          "blurb": "Todai-ji's great Buddha and the park's free-roaming deer.",
+          "slug": "nara"
+        }
+      ],
+      "venues": [
+        "train",
+        "temple",
+        "shrine",
+        "restaurant"
+      ],
+      "points": [
+        {
+          "lat": 34.6851,
+          "lng": 135.843
+        },
+        {
+          "lat": 34.6625,
+          "lng": 135.4962
+        }
+      ],
+      "stayTonight": "osaka",
+      "stayLastNight": "osaka"
+    },
+    {
+      "date": "2026-11-02",
+      "dow": "Mon",
+      "seg": "os",
+      "places": [
+        "osaka"
+      ],
+      "area": "Osaka Castle → Shinsekai",
+      "hoods": [
+        {
+          "name": "Osaka Castle",
+          "blurb": "The rebuilt castle keep on its stone walls, in a big park with moats.",
+          "slug": "osaka-castle"
+        },
+        {
+          "name": "Shinsekai",
+          "blurb": "Old-style streets around Tsutenkaku tower, known for kushikatsu, skewers fried to order.",
+          "slug": "shinsekai"
+        }
+      ],
+      "venues": [
+        "shop",
+        "restaurant",
+        "izakaya"
+      ],
+      "points": [
+        {
+          "lat": 34.6873,
+          "lng": 135.5262
+        },
+        {
+          "lat": 34.6525,
+          "lng": 135.5063
+        },
+        {
+          "lat": 34.6625,
+          "lng": 135.4962
+        }
+      ],
+      "stayTonight": "osaka",
+      "stayLastNight": "osaka"
+    },
+    {
+      "date": "2026-11-03",
+      "dow": "Tue",
+      "seg": "ks",
+      "places": [
+        "kiso",
+        "osaka"
+      ],
+      "area": "Osaka → Nakatsugawa",
+      "hoods": [
+        {
+          "name": "Nakatsugawa",
+          "blurb": "A Nakasendo post town at the foot of Mt. Ena, and the station for Magome.",
+          "slug": "nakatsugawa"
+        }
+      ],
+      "venues": [
+        "shinkansen",
+        "train",
+        "ryokan"
+      ],
+      "points": [
+        {
+          "lat": 35.4935,
+          "lng": 137.5025
+        },
+        {
+          "lat": 35.5063,
+          "lng": 137.4888
+        }
+      ],
+      "stayTonight": "nakatsugawa",
+      "stayLastNight": "osaka"
+    },
+    {
+      "date": "2026-11-04",
+      "dow": "Wed",
+      "seg": "ks",
+      "places": [
+        "kiso"
+      ],
+      "area": "Magome → Tsumago on foot",
+      "hoods": [
+        {
+          "name": "Magome",
+          "blurb": "A hillside post town of stone-paved lanes and wooden inns, where the Kiso Road walk starts.",
+          "slug": "magome"
+        },
+        {
+          "name": "Magome to Tsumago walk",
+          "blurb": "About 8 km of the old Nakasendo road, over Magome Pass, through forest and small hamlets.",
+          "slug": "magome-tsumago"
+        },
+        {
+          "name": "Tsumago",
+          "blurb": "A preserved Edo-period post town. Cars stay off the main street, and power lines are hidden.",
+          "slug": "tsumago"
+        }
+      ],
+      "venues": [
+        "ryokan",
+        "restaurant",
+        "cafe"
+      ],
+      "points": [
+        {
+          "lat": 35.5265,
+          "lng": 137.5664
+        },
+        {
+          "lat": 35.5481,
+          "lng": 137.5786
+        },
+        {
+          "lat": 35.5766,
+          "lng": 137.5958
+        },
+        {
+          "lat": 35.5648,
+          "lng": 137.5928
+        }
+      ],
+      "stayTonight": "tsumago",
+      "stayLastNight": "nakatsugawa"
     },
     {
       "date": "2026-11-05",
@@ -550,37 +637,71 @@
       "seg": "t2",
       "places": [
         "tokyo",
-        "kyoto"
+        "kiso"
       ],
-      "area": "Kyoto → Tokyo Station",
+      "area": "Kiso Valley → Asakusa",
       "hoods": [
         {
-          "name": "Marunouchi",
-          "blurb": "Tokyo Station's red-brick facade and the Imperial Palace East Gardens.",
-          "slug": "marunouchi"
+          "name": "Asakusa",
+          "blurb": "Senso-ji temple and the Nakamise shopping street. Busiest from mid-morning.",
+          "slug": "asakusa"
         }
       ],
       "venues": [
-        "shinkansen",
-        "shop",
-        "restaurant"
+        "train",
+        "temple",
+        "shop"
       ],
       "points": [
         {
-          "lat": 35.6812,
-          "lng": 139.7671
+          "lat": 35.7148,
+          "lng": 139.7967
         },
         {
-          "lat": 35.6727,
-          "lng": 139.7586
+          "lat": 35.7149,
+          "lng": 139.795
         }
       ],
-      "stayTonight": "tokyo-2",
-      "stayLastNight": "kyoto"
+      "stayTonight": "asakusa",
+      "stayLastNight": "tsumago"
     },
     {
       "date": "2026-11-06",
       "dow": "Fri",
+      "seg": "t2",
+      "places": [
+        "tokyo"
+      ],
+      "area": "Yanaka and Nezu",
+      "hoods": [
+        {
+          "name": "Yanaka and Nezu",
+          "blurb": "Old wooden streets, small temples and Nezu Shrine's tunnel of red gates.",
+          "slug": "yanaka-nezu"
+        }
+      ],
+      "venues": [
+        "temple",
+        "shrine",
+        "cafe",
+        "restaurant"
+      ],
+      "points": [
+        {
+          "lat": 35.7225,
+          "lng": 139.766
+        },
+        {
+          "lat": 35.7149,
+          "lng": 139.795
+        }
+      ],
+      "stayTonight": "asakusa",
+      "stayLastNight": "asakusa"
+    },
+    {
+      "date": "2026-11-07",
+      "dow": "Sat",
       "seg": "t2",
       "places": [
         "tokyo"
@@ -613,44 +734,12 @@
           "lng": 139.7633
         },
         {
-          "lat": 35.6727,
-          "lng": 139.7586
+          "lat": 35.7149,
+          "lng": 139.795
         }
       ],
-      "stayTonight": "tokyo-2",
-      "stayLastNight": "tokyo-2"
-    },
-    {
-      "date": "2026-11-07",
-      "dow": "Sat",
-      "seg": "t2",
-      "places": [
-        "tokyo",
-        "maihama"
-      ],
-      "area": "Tokyo DisneySea",
-      "hoods": [
-        {
-          "name": "Maihama (Tokyo Bay)",
-          "blurb": "Tokyo Disneyland and DisneySea.",
-          "slug": "maihama"
-        }
-      ],
-      "venues": [
-        "theme-park"
-      ],
-      "points": [
-        {
-          "lat": 35.6267,
-          "lng": 139.8851
-        },
-        {
-          "lat": 35.6727,
-          "lng": 139.7586
-        }
-      ],
-      "stayTonight": "tokyo-2",
-      "stayLastNight": "tokyo-2"
+      "stayTonight": "asakusa",
+      "stayLastNight": "asakusa"
     },
     {
       "date": "2026-11-08",
@@ -663,8 +752,8 @@
       "hoods": [],
       "venues": [],
       "points": [],
-      "stayTonight": "tokyo-2",
-      "stayLastNight": "tokyo-2"
+      "stayTonight": "asakusa",
+      "stayLastNight": "asakusa"
     },
     {
       "date": "2026-11-09",
@@ -673,40 +762,40 @@
       "places": [
         "tokyo"
       ],
-      "area": "Ebisu → Shinjuku",
+      "area": "Kichijoji → Shimokitazawa",
       "hoods": [
         {
-          "name": "Ebisu",
-          "blurb": "Yebisu Garden Place and many small restaurants and bars around the station.",
-          "slug": "ebisu"
+          "name": "Kichijoji",
+          "blurb": "Inokashira Park, shopping arcades and the Harmonica Yokocho alleys.",
+          "slug": "kichijoji"
         },
         {
-          "name": "Shinjuku",
-          "blurb": "Skyscrapers to the west, Omoide Yokocho and Golden Gai's tiny bars to the east of the station.",
-          "slug": "shinjuku"
+          "name": "Shimokitazawa",
+          "blurb": "Vintage clothing, record shops, cafes and small live-music venues.",
+          "slug": "shimokitazawa"
         }
       ],
       "venues": [
-        "ramen",
-        "cocktail-bar",
-        "restaurant"
+        "cafe",
+        "shop",
+        "izakaya"
       ],
       "points": [
         {
-          "lat": 35.6467,
-          "lng": 139.7101
+          "lat": 35.7033,
+          "lng": 139.5797
         },
         {
-          "lat": 35.6938,
-          "lng": 139.7034
+          "lat": 35.6614,
+          "lng": 139.668
         },
         {
-          "lat": 35.6727,
-          "lng": 139.7586
+          "lat": 35.7149,
+          "lng": 139.795
         }
       ],
-      "stayTonight": "tokyo-2",
-      "stayLastNight": "tokyo-2"
+      "stayTonight": "asakusa",
+      "stayLastNight": "asakusa"
     },
     {
       "date": "2026-11-10",
@@ -740,10 +829,14 @@
         {
           "lat": 35.5494,
           "lng": 139.7798
+        },
+        {
+          "lat": 35.7149,
+          "lng": 139.795
         }
       ],
       "stayTonight": "air",
-      "stayLastNight": "tokyo-2"
+      "stayLastNight": "asakusa"
     }
   ]
 }
